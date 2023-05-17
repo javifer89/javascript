@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de datos</title>
+</head>
+<body>
+    <script>
+    var nombreAlumno;  //declaración de la variable
+    var apellidoAlumno = "Pérez";
+    console.log(apellidoAlumno);
+    console.log(nombreAlumno); //undefined
+    apellidoAlumno = "Martín";
+
+    nombreAlumno = "Juan";  // inicialización de la variable
+    //typeof
+
+    //Strings
+    console.log(typeof apellidoAlumno);
+    console.log(typeof nombreAlumno); // string
+    console.log(nombreAlumno); // Juan
+
+
+    //Numbers
+    var contador = 23;  // declaro la variable contador
+    contador = 49; // le modifico el valor a la variable, no es recomendable volver a declararla con "var"
+                    // ya que esta volviendo a utilizar un espacio en la memoria
+    console.log(contador); // 45
+
+    var media = 3.81;
+    var negativo = -78;
+
+    //Boolean   (true - false) -
+
+    var isOnline = true;
+    isOnline = false;
+
+    //Null
+
+    var direccion = "C Falsa 123"; //string
+    direccion = ""; // sigue siendo un string sin valor
+    direccion = null; // no tiene ni valor ni tipo
+
+</script>
+</body>
+</html>
