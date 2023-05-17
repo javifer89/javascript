@@ -12,10 +12,26 @@
 
     <script>
 
-        ////pedir por pantalla un poligono, dos opciones circulo o rectangulo, pedir un color el ancho y el alto y dibujar la figura en funcion de lo elegido.
+        ////pedir por pantalla un poligono, dos opciones circulo o rectangulo, pedir un color el ancho y el alto
+        // y dibujar la figura en funcion de lo elegido.
 
+        var poligono = prompt('¿Quieres un círculo o un rectángulo?');
 
+        var color = prompt('INTRODUCE un color en ingles');
+        var ancho = prompt('INTRODUCE un ancho');
+        var alto = prompt('INTRODUCE un alto');
 
+        var rectangulo = `<div style="background-color: ${color}; width: ${ancho}px; height: ${alto}px; margin: 10px;"></div>`;
+
+        var circulo = `<div style="background-color: ${color}; width: ${ancho}px; height: ${alto}px; border-radius: 50%;"></div>`;
+
+        if (poligono = 'rectángulo'){
+            document.write(rectangulo)
+        }else if (poligono = 'círculo'){
+            document.write(circulo)
+        }else{
+        document.write("No existe esa figura");
+        }
     </script>
 
 </body>
