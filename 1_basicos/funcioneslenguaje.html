@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var usuario = 'Ramiro';
+
+        // pasar a Mayuscula (método)
+        var usuarioMayus = usuario.toUpperCase();
+        console.log(usuarioMayus, usuario);
+
+        // pasar a minusculas
+        var usuarioMinus = usuario.toLowerCase();
+        console.log(usuario, usuarioMayus, usuarioMinus);
+
+        console.log(usuario.at(3))
+
+        //Pedir datos por pantalla
+        var marca = prompt('Dame la marca de tus zapatillas');
+        console.log(marca === 'nike');
+
+        //Pido un numero
+        var numeroStr = prompt('Dame un número');
+        var numero = Number(numeroStr);
+        //parseInt
+        numero = parseInt(numeroStr); // se quedaria con la parte entera
+        numero = parseFloat(numeroStr); // se quedaria con los decimales (todo el numero)
+        console.log(numero * 6);
+
+        //Math
+        console.log('Número PI', Math.PI);
+        console.log(Math.abs(-56)); // 56
+        console.log(Math.floor(7.8)); // 7 , redondea a la baja
+        console.log(Math.ceil(7.8)); // 8, redondea hacia arriba
+        console.log(Math.round(7.8));// 8, redondea de forma genérica (a partir de 7.5 hacia arriba)
+
+        console.log(Math.max(12, 23, 4, 9)); // identificar número máximo
+        console.log(Math.min(12, 23, 4, 9)); // identificar número mínimo
+
+        console.log(Math.random()); // devuelve un número aleatorio entre 0 y 1
+        console.log(Math.random() *10); // devuelve un número entre 0 y 10 (1 x 10)
+
+        console.log(Math.floor(Math.random()* 10)) // devolvería un numero entre 0 y 10 SIN DECIMALES
+
+    </script>
+</body>
+</html>

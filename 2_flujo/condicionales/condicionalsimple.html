@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicional Simple</title>
+</head>
+
+<body>
+
+    <script>
+
+        /* sintaxis
+
+            if(CONDICION - operacion condicional){
+              sentencias que ocurren aqui solo se ejecutan si y solo si CONDICION - true  
+            }
+        */
+
+        const nota = 4;
+
+        // ¿El alumno esta aprobado?
+
+        if (nota >= 5) {
+            document.write('<h1>Aprobado</h1>');
+        }
+
+
+        //condicional con secuencia de escape. OJO esa secuencia de escape no deberia representar un decision esperada, salvo que estemos antes un proceso binario, de unicamente dos posibilidades.
+
+        if (nota >= 5 && nota <= 10) {
+            document.write('<h1>Aprobado</h1>');
+        } else {
+            document.write('<h1>No es una nota valida</h1>');
+        }
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

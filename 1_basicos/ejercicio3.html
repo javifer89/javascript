@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- <div style="background-color: tomato; width: 100px; height: 100px;"></div> -->
+
+    <script>
+
+        //quiero un programa que me permita pintar cuadrados de distintos tamaños y distinto color;
+        var color = prompt('Dame un color en ingles');
+        var ancho = prompt('Dame un ancho')
+        var alto = prompt('Dame un alto');
+
+        /* var cuadrado = '<div style="background-color: ' + color + '; width: ' + ancho + 'px; height: ' + alto + 'px;"></div>' */
+
+        //Template literal
+
+        var cuadrado = `<div style="background-color: ${color}; width: ${ancho}px; height: ${alto}px; margin: 10px;"></div>`
+
+        document.write(cuadrado);
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
