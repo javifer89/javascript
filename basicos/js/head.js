@@ -1,0 +1,1 @@
+alert('estoy en head pero en un archivo a parte');

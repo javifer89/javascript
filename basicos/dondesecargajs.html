@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donde se carga javascript</title>
+    <!-- ZONA 1 justo antes del cierre de head. Aqui cargaremos script que no interaccionen con el html, por ej: cargas de datos -->
+    <script>
+        alert('esto en head pero en html')
+    </script>
+    <script src="./js/head.js"></script>
+</head>
+
+<body>
+
+    <h1>Hola Mundo</h1>
+
+
+    <!--  ZONA 2 - justo antes del cierre del body y despues del todo el html -->
+    <script>
+        document.querySelector('h1').innerText = 'He cambiado el texto';
+    </script>
+    <script src="./js/footer.js"></script>
+</body>
+
+</html>
