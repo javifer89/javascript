@@ -16,10 +16,24 @@
 
         //hacer una pregunta que sea que deseas hacer. Sacar dinero, Ingresar dinero, Consultar saldo y salir
 
-        //si pulsa salir el programa acabará, si pulsa ingresar el programa pedirá una cantidad de dinero y la guardará, luego volvera hacer la pregunta anterior, si pulsa consultar devolvera la cantidad de dinero, y si pulsa sacar dinero restará el dinero gastado del total, cada pregunta volverá al menu principal de nuevo a no ser que se pulse salir.
+        //si pulsa salir el programa acabará, si pulsa ingresar el programa pedirá una cantidad de dinero y la guardará, luego volvera hacer
+        // la pregunta anterior, si pulsa consultar devolvera la cantidad de dinero, y si pulsa sacar dinero restará el dinero gastado del total,
+        // cada pregunta volverá al menu principal de nuevo a no ser que se pulse salir.
+
+        var CUENTA_BANCARIA = 1000;
 
 
 
+        do{
+        var cajero = prompt('Qué desea hacer?: Sacar dinero, Ingresar dinero, Consultar saldo o salir').toLowerCase;
+        }
+        while (cajero === consultarSaldo || cajero === sacarDinero || cajero === ingresarDinero){
+            console.log(consultarSaldo);
+            var sacarDinero = CUENTA_BANCARIA - parseInt(prompt('Cantidad de dinero a retirar'));
+            var ingresarDinero = CUENTA_BANCARIA + parseInt(prompt('Cantidad de dinero a ingresar'));
+            var consultarSaldo = CUENTA_BANCARIA;
+        }
+        document.write('Hasta la próxima')
 
 
     </script>
