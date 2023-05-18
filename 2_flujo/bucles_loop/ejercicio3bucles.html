@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cuadrado {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+        //pedir tres numeros por pantalla, de esos tres numeros os teneis que quedar con el mayor(máximo)
+        //pintar ese número máximo de cuadrados pedido
+        // dentro de cada cuadrado pintar un numero aleatorio entre 0 y 100
+        //si el numero del cuadrado (aleatorio) es divisible por 3 ponerle un borde 2px solid tomato
+
+        var numero1 = parseInt(prompt("Introduce el primer número"));
+        var numero2 = parseInt(prompt("Introduce el segundo número"));
+        var numero3 = parseInt(prompt("Introduce el tercer número"));
+        
+        const numCuadrados = Math.max(numero1,numero2, numero3);
+
+        for(var i = 1; i <= numCuadrados; i++)  {
+            var numAleatorio = Math.ceil(Math.random() * 100);
+            var borde="";
+            if (numAleatorio % 3 === 0){
+                borde = "2px solid tomato"
+            }
+        document.write(`<div class="cuadrado" style="border: ${borde}">${numAleatorio}</div>`);
+        }
+
+
+    </script>
+</body>
+</html>

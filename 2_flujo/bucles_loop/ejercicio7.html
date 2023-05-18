@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        /*
+               - Escribir un programa donde el usuario elija entre lo siguiente ¿Qué desea cenar? Y pueda poner dos opciones Carne o Pescado
+               Y luego se le pregunte también si desea o no postre
+      
+                  - Si eligió cenar Carne-> pago 23 €
+                  - Si eligió cenar Pescado->pago 15 €
+                  - Si tomo postre->el postre valió 3 €
+      
+                  - Calcular el valor total de la cena dependiendo de las opciones que elija por teclado el usuario, incluyendo una propina del 6%
+              */
+
+
+        var plato = prompt('¿Qué desea cenar, carne o pescado?').toLowerCase();
+        var postre = prompt('¿Quiere tomar postre? SI o NO').toUpperCase();
+
+        var precioPlato = (plato === 'carne') ? 23 : 15;
+        var precioPostre = (postre === 'SI') ? 3 : 0;
+
+        /*
+        if (plato === 'carne') {
+            precioPlato = 23;
+        } else {
+            precioPlato = 15;
+        }
+
+        if (postre === 'SI') {
+            precioPostre = 3;
+        } else {
+            precioPostre = 0;
+        }
+        */
+
+        var comanda = (precioPlato + precioPostre) + ((precioPlato + precioPostre) * 0.06)
+        console.log(comanda);
+
+    </script>
+
+</body>
+
+</html>

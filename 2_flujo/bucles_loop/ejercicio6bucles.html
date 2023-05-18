@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- <div style="background-color: tomato; width: 100px; height: 100px; margin-left: 0px;"></div> -->
+
+
+
+    <script>
+
+        //pedir por pantalla un numero de cuadrados, pedir el ancho del cuadrado
+        //situarlos en escalera.
+
+        var ancho = prompt('Dime un ancho');
+        var numCuadrados = parseInt(prompt('Dime un numero de cuadrados'));
+
+        for (var i = 0; i < numCuadrados; i++) {
+            document.write(`<div style="background-color: tomato; width: ${ancho}px; height: ${ancho}px; margin-left: ${ancho * i}px;"></div>`)
+        }
+
+
+
+    </script>
+</body>
+
+</html>

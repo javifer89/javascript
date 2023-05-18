@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 bucles</title>
+    <style>
+        .cuadrado {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+
+        .rojo {
+            background-color: red;
+        }
+
+        .verde {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <div class="cuadrado rojo">1</div> -->
+
+    <script>
+
+        //quiero pintar n cuadrados, verticalmente, siendo n un numero pedido por pantalla
+
+        //cada cuadrado tendra como texto dentro del propio cuadrado el numero de su posicion.
+
+        //si el cuadrado esta en posicion par el color sera verde y el si el cuadrado esta en posicion impar sera tomato.
+
+        //pasos 1
+        // 1 - pintar un cuadrado ✅
+        // 2 - pedir un numero de cuadrados por pantalla ✅
+        // 3 - pintar dicho numero de cuadrados ✅
+        // 4 - poner el numero de posicion dentro de cada cuadrado ✅
+        // 5 - cambiar el color dependiendo de si es par o impar. ✅
+
+
+        const numCuadrados = parseInt(prompt('Dime cuantos cuadrados quieres'));
+        console.log(numCuadrados);
+        var color = "";
+
+        for (var i = 1; i <= numCuadrados; i++) {
+            /* if (i % 2 !== 0) {
+                //impar
+                color = 'rojo';
+            } else {
+                //par
+                color = 'verde';
+            } */
+            color = (i % 2 !== 0) ? 'rojo' : 'verde';
+            document.write(`<div class="cuadrado ${color}">${i}</div>`)
+        }
+
+
+    </script>
+
+</body>
+
+</html>
