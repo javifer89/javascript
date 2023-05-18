@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador Condicional</title>
+</head>
+<body>
+
+<script>
+// si el valor de una variable o varias variables dependede de una estructura condicional
+// con secuencia de escape se trata de una estructura binaria. Esto que vamos a ver
+// se llama OPERADOR TERNARIO y ayuda a evitar el HADOOKEN Code.
+/*
+Sintaxis
+
+VARIABLE = CONDICION ? VALOR si true : VALOR si false
+*/
+
+//BINARIO
+
+const poligono = prompt('Dime un poligono, circulo, cuadrado');
+
+var radio = "";
+if (poligono === 'circulo'){
+    radio = '50%';
+}else {
+    radio = '0%';
+}
+
+//TERNARIO  ("?" -> if , ":" -> else)
+
+var radio2 = (poligono === 'circulo') ? '50%': '0%';
+
+
+</script>
+
+
+</body>
+</html>

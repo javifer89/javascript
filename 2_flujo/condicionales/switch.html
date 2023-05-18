@@ -8,7 +8,39 @@
 </head>
 <body>
 
+<script>
+//switch es evaluar casos y devovler un resultado en funcion de esos casos. Inicialmente se distingue
+// del if porque solo evalua la existencia de un elemento y posteriormente se centra en su valor
 
-    
+//traductor de colores castellano -> ingles.
+
+const color = prompt('dime un color en castellano').toLowerCase;
+
+switch (color) {
+
+    case 'rojo':
+    case 'bermellon':  // a un CASE  podemos darle varias palabras
+        //Acciones
+        alert ('red');
+        break;
+
+    case 'azul':
+        //Acciones
+        alert ('blue');
+        break;
+
+    case 'amarillo':
+        //Acciones
+        alert ('yellow');
+        break;
+
+    default:
+        alert('el color no se encuentra en nuestro diccionario')
+        break;
+
+}
+
+</script>
+
 </body>
 </html>

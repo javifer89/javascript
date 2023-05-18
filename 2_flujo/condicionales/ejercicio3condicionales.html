@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 condicionales</title>
+</head>
+<body>
+<script>
+    //pedir una edad (numero) y genero (hombre, mujer)
+    //sacar por pantalla solo si es mujer y mayor de 15 años. Si no se cumple
+    //dicha condicion el programa no deberá sacar ningun mensaje.
+    const EDAD_CORTE = 15;
+    var edad = parseInt(prompt('Qué edad tienes?'));
+    var genero = prompt('Eres hombre o mujer?').toLowerCase();
+
+    if  (edad >15 && genero === 'mujer'){
+        document.write('Eres mujer mayor de 15')
+    }else{
+        document.write('');
+    }
+
+//opcion correcta
+
+if(edad>EDAD_CORTE && genero === 'mujer'){
+    console.log('he encontrado lo que buscaba')
+}
+
+</script>
+</body>
+</html>
