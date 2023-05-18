@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+hj<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -8,40 +8,75 @@
     <title>Document</title>
     <style>
         .rojo {
-            color: red;
+            background-color: red;
+            padding: 20px;
+            border: 1px solid black;
         }
-        .verde{
-            color: green;
+        .verde {
+            background-color: green;
+            padding: 20px;
+            border: 1px solid black;
+            color: white;
         }
     </style>
 </head>
 
 <body>
-
+<!-- <h2 class="rojo">Bienvenido a mi web</h2>
+<h2 class="verde">Bienvenido a mi web</h2> -->
     <script>
 
         //teneis que preguntar por pantalla la edad la persona, si mayor de edad años le damos la bienvenida
         //escribiendo un mensaje en html en color verde, y si no es mayor de edad  le escribimos un mensaje en color rojo.
-
         //OJO si estamos en europa mayor de edad seria por encima 18 si estamos en America mayor edad es por encima de 21
 
-        var bienvenidaAmerica = '<h1 class="rojo">Bienvenid@ en America</h1>';
-        var bienvenidaEuropa = '<h1 class="verde">Bienvenid@ en Europa</h1>';
+//CORRECCIÓN
 
-        var edad = prompt('Dime tu edad');
+        var edad = parseInt(prompt('Dime tu edad'));
+        var EDAD_CORTE = 18;
+        var color = "";
+        var mensaje = "";
+        var pais = prompt ('De qué continente vienes, ¿Europa o América?')
+
+            if(pais.toLowerCase() === 'america') {
+                EDAD_CORTE = 21
+            }else if(pais.toLowerCase() === 'europa'){
+                EDAD_CORTE = 18;
+            }else if(pais.toLowerCase() === 'asia') {
+                EDAD_CORTE = 35;
+            }else{
+                alert('Ese continente no esta disponible');
+            }
 
 
-        if (edad >=18 && edad <21) {
-            document.write(bienvenidaEuropa);
-        }else if (edad >= 21){
-            document.write(bienvenidaAmerica || bienvenidaEuropa);
+
+        if (edad >= EDAD_CORTE) {
+            color = 'verde';
+            mensaje = 'Bienvenido a mi Web'
         }else{
-            document.write('<h1 class="rojo">No eres bienvenid@</h1>');
+            color = 'rojo';
+            mensaje = 'Un vasito de leche y a la cama';
         }
+        document.write(`<h2 class=${color}">${mensaje}</h2>`)
 
 
 
 
+
+        //EJERCICIO SIN CORREGIR
+
+        // var bienvenidaAmerica = '<h1 class="rojo">Bienvenid@ en America</h1>';
+        // var bienvenidaEuropa = '<h1 class="verde">Bienvenid@ en Europa</h1>';
+
+        // var edad = prompt('Dime tu edad');
+
+        // if (edad >=18 && edad <21) {
+        //     document.write(bienvenidaEuropa);
+        // }else if (edad >= 21){
+        //     document.write(bienvenidaAmerica || bienvenidaEuropa);
+        // }else{
+        //     document.write('<h1 class="rojo">No eres bienvenid@</h1>');
+        // }
 
 
     </script>
