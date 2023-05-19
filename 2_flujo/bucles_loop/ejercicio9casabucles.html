@@ -20,20 +20,55 @@
         // la pregunta anterior, si pulsa consultar devolvera la cantidad de dinero, y si pulsa sacar dinero restará el dinero gastado del total,
         // cada pregunta volverá al menu principal de nuevo a no ser que se pulse salir.
 
-        var CUENTA_BANCARIA = 1000;
+
+
+        var amount = 500;
+
+
+        do {
+            var option = prompt('Qué desea hacer? (sacar, ingresar, consultar o salir)').toLowerCase();
+
+
+            switch (option) {
+                case 'sacar':
+                    var extract = Number(prompt('Cuanto dinero quieres sacar?'));
+                    if(extract > amount) {
+                        console.log('estás pobre');
+                    }else {
+                    amount -= extract; // amount = amount - extract
+                    }
+                    break;
+                case 'ingresar':
+                    var add = Number(prompt('Cuanto dinero quieres ingresar?'));
+                    amount += extract;  // amount = amount + extract
+                    break;
+                case 'consultar':
+                    console.log(`Tienes ${amount} euros`);  // template string, siempre con acento abierto, no comilla simple
+                    break
+                case 'salir':
+                    console.log('Hasta Pronto');
+                    break;
+                default:
+                    console.log('Las opciones son sacar, ingresar o consultar')
+            }
+        }while (option !== 'salir')
 
 
 
-        do{
-        var cajero = prompt('Qué desea hacer?: Sacar dinero, Ingresar dinero, Consultar saldo o salir').toLowerCase;
-        }
-        while (cajero === consultarSaldo || cajero === sacarDinero || cajero === ingresarDinero){
-            console.log(consultarSaldo);
-            var sacarDinero = CUENTA_BANCARIA - parseInt(prompt('Cantidad de dinero a retirar'));
-            var ingresarDinero = CUENTA_BANCARIA + parseInt(prompt('Cantidad de dinero a ingresar'));
-            var consultarSaldo = CUENTA_BANCARIA;
-        }
-        document.write('Hasta la próxima')
+
+        //EJERCICIO MIO
+
+        // var CUENTA_BANCARIA = 1000;
+        // do{
+        // var cajero = prompt('Qué desea hacer?: Sacar dinero, Ingresar dinero, Consultar saldo o salir').toLowerCase;
+        // }
+        // while (cajero === consultarSaldo || cajero === sacarDinero || cajero === ingresarDinero){
+        //     console.log(consultarSaldo);
+        //     var sacarDinero = CUENTA_BANCARIA - parseInt(prompt('Cantidad de dinero a retirar'));
+        //     var ingresarDinero = CUENTA_BANCARIA + parseInt(prompt('Cantidad de dinero a ingresar'));
+        //     var consultarSaldo = CUENTA_BANCARIA;
+        // }
+        // document.write('Hasta la próxima')
 
 
     </script>

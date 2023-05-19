@@ -34,22 +34,23 @@
 
 
         */
+        var num= Number(prompt('Cuantas lineas quieres?'));
 
-        var casa = parseInt(prompt('Dime un número'));
-// var resultado;    undefined (porque no tiene ningún valor)
-var resultado = 1;
-var serie = "";
-while (numero >= 1) {
-    //acumulado
-    resultado = resultado * numero // resultado *= numero ES LO MISMO SIMPLIFICADO
-    serie = serie + numero + " ";  // mostraria una cadena de caracteres con los numeros que obtenemos del bucle
-    numero--;
-}
-console.log(resultado);
-console.log(serie);
+        for(var i=0;i<num;i++){
+            var linea = '';
+            for(var j=0; j<= i; j++) {
+                 linea += '*';       //linea = linea + '*'; lo mismo, simplificado
+            }
+            console.log(linea);
+            document.write(linea + '<br>')
+        }
 
-var casa = "*";
-while
+
+        //Hay que utilizar anotaciones para organizar nuestro código antes de escribirlo
+
+// num = 12
+// i = 0 1 2 4 5...11
+// j = 1 2 3 5 6...12
 
     </script>
 </body>
