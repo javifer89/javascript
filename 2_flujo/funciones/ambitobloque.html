@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMBITO BLOQUE</title>
+</head>
+<body>
+<script>
+var ciudad = 'Madrid'; // ámbito global
+var nombre = 'Federico' // ámbito global
+var precio = 0;
+if(nombre === 'Ramiro'){ // ámbito de bloque
+    var edad = 28;  //ámbito global: al declarar la variable mediante "var", podemos acceder a la variable externamente (global) aunque
+                            // estemos declarandola dentro del ámbito de bloque. Si la declaramos mediante "let" se podria
+                            // acceder solamente dentro del bloque. Por lo tanto dentro del "ambito de bloque" debemos utilizar
+                            // "LET" y no "var".
+let apellidos = 'Martín'// ámbito local
+    precio = 100;
+        console.log('Precio: ', precio);
+
+    const gravedad = 9.8;  // let y const respetan el ámbito donde han sido creadas. Const no puede ser modificada
+    gravedad = 7.6; // error, const no puede modificarse
+}
+
+// Ámbito en un bucle for
+for (var i = 0; i < 10; i++){
+    console.log('Dentro', i);
+}
+console.log('Fuera', i)
+
+
+for (let j = 0; j < 10; j++){
+    console.log('Dentro', j);
+}
+console.log('Fuera', j)
+
+
+//Reglas para utilizar VAR, LET o CONST
+
+// Usamos CONST siempre y cuando no modifiquemos el valor de la variable
+// Usamos LET cuando vayamos a modificar el valor de la variable
+// Usamos VAR en el resto de casos (NUNCA)
+</script>
+</body>
+</html>
