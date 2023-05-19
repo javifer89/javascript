@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones con parametros</title>
+</head>
+<body>
+<script>
+//Los parámetros son valores que recibe la función para que su ejecución sea diferente cada caso
+
+function pintarCuadrado(pLado, pColor){  //Funcion para pintar cuadrados con diferentes tamaños y colores
+    document.write(`<div style="width: ${pLado}px; height: ${pLado}px; background-color: ${pColor}; margin: 10px;"></div>`)
+}
+pintarCuadrado(200, 'dodgerblue');
+pintarCuadrado(150, 'lightgreen');
+
+for(let i=0; i<200; i++){  // creamos un bucle para pintar un numero aleatorio (entre 0 y 400) de cuadrados en tomato
+    pintarCuadrado(Math.random() * 400, 'tomato');
+}
+
+
+
+</script>
+</body>
+</html>
