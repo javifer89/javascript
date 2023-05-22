@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULADORA</title>
+</head>
+<body>
+    <div class=”calculadora”>
+        <div class=”calculadora-pantalla”>0</div>
+        <div class=”calculadora-teclas”> … </div>
+      </div>
+<script>
+//tenemos que pedir por pantalla dos numeros y un tipo de calculo (sumar, restar, multiplicar). Pintar el resultado en pantalla.
+
+
+//CORRECCIÓN
+
+function multiplicar(pNumA, pNumB){
+    // let resultado = pNumA * pNumB;
+    // return resultado;
+    return pNumA * pNumB  // lo mismo que antes simplificado
+}
+const restar = function(pNumeroA, pNumeroB){
+    let result = pNumeroA - pNumeroB;
+    return result;
+}
+function sumar(pNum1, pNum2){
+    return pNum1 + pNum2;
+}
+
+function calcular (pNumero1, pNumero2, pOperacion) {
+
+let resultado = 0;
+    if (pOperacion === 'sumar'){  // el operador de comparación en la operación, no en el resultado
+        resultado = pNumero1 + pNumero2;
+    } else if (pOperacion === 'restar'){
+        resultado = pNumero1 - pNumero2;
+    } else if (pOperacion === 'multiplicar'){
+        resultado = pNumero1 * pNumero2;
+    }
+    document.write(`<p>El resultado de ${pOperacion} ${pNumero1} y ${pNumero2} es igual a ${resultado}</p>`);
+}
+
+// lo mismo resuelto con switch habiendo declarado las funciones previamente
+function calcular (pNumero1, pNumero2, pOperacion){
+
+    let resultado = 0;
+
+    switch(pOperacion) {
+        case 'sumar':
+            resultado = sumar(pNumero1, pNumero2);
+
+            break;
+            case 'restar':
+                resultado = restar (pNumero1, pNumero2);
+
+            break;
+            case 'multiplicar':
+                resultado = multiplicar (pNumero1, pNumero2);
+
+            default:
+                console.log('operacion no permitida');
+            }
+            pintarResultado(resultado, pOperacion)
+        }
+
+function pintarResultado(pResultado, pOperacion){
+    document.write(`el ${pResultado} de la operación es ${pResultado}`)
+}
+
+
+
+
+
+//EJERCICIO MIO  (correcciones en verde)
+let num1 = Number(prompt('Dame un numero'));  // parseInt también funcionaria pero no tendría decimales
+let num2 = Number(prompt('Dame otro numero'));
+let calculo = prompt('Quieres sumar, restar o multiplicar?').toLowerCase();
+let resultado = 0;  // Inicializamos el resultado en 0 no en " "
+
+//LOS DATOS PEDIDOS POR PANTALLA SIEMPRE SON GLOBALES Y SE PUEDEN PASAR POR PARÁMETRO A UNA FUNCIÓN
+
+if (calculo === 'sumar'){  // el operador de comparación en la operación, no en el resultado
+    resultado = num1 + num2;
+} else if (calculo === 'restar'){
+    resultado = num1 - num2;
+} else if (calculo === 'multiplicar'){
+    resultado = num1 * num2;
+}else{
+    document.write('No es una operación válida')
+}
+
+document.write(`<p>El resultado de ${calculo} ${num1} y ${num2} es igual a ${resultado}</p>`);
+
+
+</script>
+</body>
+</html>

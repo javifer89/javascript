@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULAR PVP</title>
+</head>
+<body>
+
+<script>
+
+//Quiero hacer una aplicación que me permita calcular y sacar por pantalla el PVP de un producto
+
+// Quiero comprar un producto a 1000€ + 500€ (beneficio) -> 21% -> 1860€ iva y beneficio incluidos.
+// PVP = (precioCoste + beneficio) + impuesto
+// precioCoste = 1000€
+// beneficio = 20% -->  (1000*20 /100) o (1000 * 0.20) == 200€
+// precioFinal = precioCoste + beneficio --> 1200€
+// PVP = precioFinal * 0.21
+
+function sumar (pNum1, pNum2) { // funcion hija
+    return pNum1 + pNum2;
+}
+function calcularPorcentaje (pNum, pPorcentaje){
+    return (pNum * pPorcentaje) / 100;
+}
+
+function calcularPVP(pPrecio, pPorcentajeBeneficio, pPorcentajeImpuesto) // funcion padre
+{
+let beneficio = calcularPorcentaje(pPrecio, pPorcentajeBeneficio);
+let precioFinal = sumar(pPrecio, beneficio);
+let impuesto = calcularPorcentaje(precioFinal, pPorcentajeImpuesto);
+let pvp = sumar(precioFinal, impuesto);
+console.log(pvp);
+
+
+}
+calcularPVP(1000, 20, 10);
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

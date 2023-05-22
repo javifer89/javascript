@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones con parametros</title>
+</head>
+<body>
+<script>
+// una función puede tener parametros obligatorios y optativos
+// en una funcion podemos poner la cantidad e parametros que queramos (más de 4 parámetros no es una buena práctica, cleancode)
+// primero debo colocar todos los parametros obligatorios y luego todos los parametros optativos
+
+    let nombre = 'Juan Antonio';
+    // parámetro obligatorio
+function saludar(pNombre, pApellido = 'Lopez'){  // un parámetro con " = " ya no será un parámetro obligatorio,a partir de ese primer optativo, todos los que pongamos serán    optativos
+    document.write(`<p>Hola me llamo ${pNombre} ${pApellido}</p>`);
+}
+saludar('Claudia', 'Perez');
+saludar('Antonio');
+saludar(nombre);
+
+
+
+
+</script>
+</body>
+</html>
