@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow functions</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        //estas funciones buscan dos cosas. La primera escribir menos.Y la segunda reducir haduken code o lo que tb se llama callback hell. Hace el codigo mas legible.
+
+        //NO TODO ES TRANSFORMABLE A FUNCIONES FLECHA, aunque hay programadores que las usan indistintanmente.
+
+        //RECETA para crear funciones flecha sin dolor.
+
+        //paso 0: partimos de una funcion anonima o expresiva
+
+        //paso 1: quito la palabra function y la sustituyo por un flecha (=>) situada detras de los parentesis.
+
+        //paso 2: solo si es una funcion que recibe un unico parametro puedo quitar los parentesis de la funcion. OJO cero parametros o mas de uno lleva parentesis.
+
+        //paso 3: si la funcion ejecuta una unica linea de codigo dentro de las llaves se pueden eliminar la llaves. Y si la linea de codigo tiene un return debo OBLIGATORIMENTE quitar el return.
+
+        //ejemplo 1: declarativa
+
+        /* inicial
+        function sumar(pNumero1, pNumero2) {
+            let resultado = pNumero1 + pNumero2;
+            console.log(resultado);
+        } 
+        */
+
+        /* paso 0
+        const sumar = function (pNumero1, pNumero2) {
+            let resultado = pNumero1 + pNumero2;
+            console.log(resultado);
+        }
+        */
+
+        /* paso 1, 2 , 3*/
+        const sumar = (pNumero1, pNumero2) => pNumero1 + pNumero2;
+
+
+        let resultado = sumar(3, 4);
+        console.log(resultado);
+
+
+        //hagamos un function que me diga si un numero es par o impar.
+
+        //funcion declarativa
+        function paridadDeclarativa(pNum) {
+            let resultado = (pNum % 2 === 0) ? 'par' : 'impar';
+            console.log(resultado);
+        }
+
+        //funcion expresiva
+        const paridadExpresiva = function (pNum) {
+            let resultado = (pNum % 2 === 0) ? 'par' : 'impar';
+            console.log(resultado);
+        }
+
+        //arrow function 
+        const paridadArrow = pNum => (pNum % 2 === 0) ? 'par' : 'impar';
+
+
+        let paridad = paridadArrow(34);
+        console.log(paridad);
+
+
+
+    </script>
+
+</body>
+
+</html>

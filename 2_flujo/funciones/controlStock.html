@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Stock</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        //necesito una aplicacion que me permita control el stock de mi tienda de paraguas negros. Para ello necesito saber los siguiente.
+
+        //cuanto stock tengo
+        //necesito poder añadir paraguas a mi stock
+        //mi tienda tiene que vender paraguas
+        //necesito un sistema de notificicaciones para que me avise cuando me queden pocos paraguar (5 o menos);
+
+
+        //necesito algo para almacenar mi stock de paraguas, es decir la cantidad de paraguas que tengo.
+        let stock = 125;
+
+        //necesito algo que me muestra por consola el stock de paraguas que tengo, cuando yo quiera.
+        const mostrarStock = () => console.log(`Tu cantidad de stock es: ${stock}`);
+
+        //necesito una funcion que me permita añadir stock. La cantidad de paraguas que yo quiera cada vez que quiera. La funcion me devolvera por consola la cantidad de stock total.
+
+        function addStock(pCantidad) {
+            stock += pCantidad //stock = stock + pCantidad;
+            mostrarStock();
+        }
+
+        //necesito algo que me permita a un usuario cualquiera comprar paraguas. Puede comprar los que quiera siempre y cuando tenga stock, si no tengo stock deberá comunicarselo y no verderle nada.
+
+
+        function comprarParaguas(pCantidad) {
+            if (stock < pCantidad) {
+                console.log('No puedes comprar mi stock es: ' + stock)
+                return false;
+            }
+            stock -= pCantidad;
+            comprobarStock();
+            return true;
+        }
+
+
+        //necesito algo que notifique cuando mi stock es de 5 productos o menos.
+        //no solo hay que crear la funcion sino saber donde ejecutarla.
+
+        const comprobarStock = function () {
+            const STOCK_MINIMO = 5;
+            if (stock <= STOCK_MINIMO) {
+                console.log('Tienes 5 paraguas o menos, creo que deberias comprar stock');
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
