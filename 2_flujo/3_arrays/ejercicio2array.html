@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio 2 array</title>
+</head>
+<body>
+<script>
+
+let nombre = 'Juan Antonio'
+
+console.log(nombre[0]) // J
+console.log(nombre.length) //12
+
+console.log(nombre[nombre.length - 1])  // la ultima posición de nombre
+
+
+//Crear array de 7 nombres y pintar en una lista no numerada solo los nombres que terminen en A
+
+
+
+const nombres = ['Almudena', 'Albanada', 'Rafael', 'Ruben', 'Mauro', 'Noelia', 'Javi']
+
+//Funcion que pinta nombres en una lista cualquiera
+function pintarLista(pLista){
+let lista = '<ul>'
+for (let i = 0; i < pLista.length; i++){
+    lista += `<li>${pLista[i]}</li>`;
+    }
+    lista += '</ul>'
+    document.write(lista);
+}
+pintarLista(nombres)
+
+//funcion que crea una lista de nombres que terminan por cualquier letra
+
+
+//funcion que crea una lista de nombres que terminan por la letra "A"
+
+function filtrarNombres(pLista, pLetra){
+    let listaFiltrada = [];
+    for(let i = 0; i < pLista.length; i++){
+        let nombre = pLista[i]
+        let ultimaLetra = nombre[nombre.length - 1].toLowerCase()
+        if(ultimaLetra === pLetra.toLowerCase()) {
+
+            listaFiltrada[listaFiltrada.length] = nombre;
+    }
+}
+return listaFiltrada
+}
+// let listaFiltradaPorA = filtrarNombres(nombres, 'a');
+// pintarLista(listaFiltradaPorA)
+pintarLista(filtrarNombres(nombres, 'a'))   //callback
+</script>
+</body>
+</html>
