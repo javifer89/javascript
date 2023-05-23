@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio 5</title>
+</head>
+<body>
+<script>
+
+    function divisible(pNum, pDivisible){
+        if(pNum % pDivisible === 0) {
+            return pNum + ' es divisible por' + pDivisible
+    }
+        return pNum + ' no es divisible por' + pDivisible
+    }
+
+
+    function getAleatorio(pMax = 50){
+        return Math.ceil(Math.random() * pMax);
+    }
+
+    /*let numero = getAleatorio(100);
+    divisible(numero);
+    llamamos a dos funciones independientes, creando un procedimiento para obtener un numero aleatorio y comprobar si es divisible (por 3 en este caso) */
+
+    console.log(divisible(getAleatorio(200))); // CALLBACK de las funciones en la linea superior
+
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursividad</title>
+</head>
+<body>
+    <script>
+
+// la recursividad es una forma de aplicar funciones. En sí mismo, recursividad es una función que se llama a sí misma
+
+
+// Sumar del 1 al 5;
+
+// la recursividad es una forma de evitar bucles
+
+// sin recursividad
+// function sumar (pCantidad){
+//     let resultado = 0;
+//     for(let i=pCantidad; i>=1; i --) {
+//         resultado += i;
+//     }
+//     console.log(resultado);
+// }
+
+//recursiva   (no es una función realmente, es una TÉCNICA)
+let resultado = 0;
+function sumar (pCantidad){
+    resultado += pCantidad;
+    pCantidad--;
+    if(pCantidad !== 0)
+    {
+    sumar(pCantidad)
+    }
+}
+sumar (5);
+console.log(resultado)
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio 4 - </title>
+</head>
+<body>
+
+    <script>
+// hacer un programa que me diga si un numero es primo o no (un numero que solo es divisible por él y por 1)
+
+
+function numeroPrimo (pNumero){
+    let resultado = true; //  <-- TODOS SON PRIMOS HASTA QUE SE DEMUESTRE LO CONTRARIO
+    if(pNumero=== 1 || pNumero === 0){
+        resultado = false;
+    }
+
+    for (let i = 2; i < pNumero; i++) {   // empezamos por el 2 porque todos los numeros sondivisibles por 1 (resto 0)
+        if(pNumero % i === 0) {
+            resultado = false;
+            break;
+        }
+    }
+    console.log(resultado)
+}
+//numeroPrimo(0)
+
+
+function numeroPrimoRecursiva (pNumero, pDivisor){ // necesitaremos el parametro del divisor para la funcion recursiva
+    let resultado = true;
+    if (pNumero === 1 || pNumero === 0){
+        resultado = false;
+        return resultado;
+    }
+    if  (pNumero % pDivisor === 0) {
+        resultado = false;
+        return resultado;
+    }
+        pDivisor++;
+        if(pNumero !== pDivisor){
+            numeroPrimoRecursiva (pNumero, pDivisor++);
+    }
+    return resultado;
+}
+    let valor = numeroPrimoRecursiva( 5, 2)
+console.log(valor)
+
+
+    </script>
+</body>
+</html>

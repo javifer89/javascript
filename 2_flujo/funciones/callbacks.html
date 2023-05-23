@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks</title>
+</head>
+<body>
+
+    <script>
+// Callback es una función que se pasa como parámetro de otra función.
+
+function esPar(pNum){
+    if ( pNum % 2 === 0){
+        console.log(pNum + ' es par');
+    }
+}
+//let num = parseInt(prompt('dime un numero'));          prompt esta actuando como callback (va como parametro de parseInt)
+
+esPar(parseInt(prompt('Dime un numero')));   // función esPar tiene 2 funciones como parámetros(parseInt y prompt), CALLBACK
+
+
+function saludar (pNombre){
+    document.write(`<p>Hola ${pNombre}</p>`)
+}
+
+function getNombre() {
+    let nombre = 'Juan Antonio'
+    return nombre;
+}
+saludar(getNombre()); // getNombre es un callback de saludar;
+
+
+
+// opcion 2 - callback de declaracion, en lugar de pasar la ejecucion como parametro pasamos la declaracion
+
+function calcular(pFunction){
+    console.log(pFunction(3, 4))
+}
+const sumar = function(pNumero1, pNumero2){  // funcion sumar es dependiente de la funcion calcular
+    return pNumero1 + pNumero2;
+}
+const restar = function(pNumero1, pNumero2){ // funcion restar es dependiente de la funcion calcular también.
+    return pNumero1 - pNumero2;
+}
+calcular(sumar)
+calcular(restar)
+
+
+
+calcular(function (pNumero1, pNumero2){  // estamos indicando la funcion directamente para ejecutarla, no estamos declarandola previamente en una constante como en sumar y restar
+    return pNumero1 * pNumero2;
+})
+calcular ((pNumero1, pNumero2) => pNumero1 * pNumero2);  // Lo mismo que la linea anterior, pero en función FLECHA
+
+
+calcular(function (pNumero1, pNumero2){
+    return Math.max(pNumero1, pNumero2)
+});
+calcular(function (pNumero1, pNumero2){
+    return pNumero1*pNumero2;
+})
+
+calcular(restar);
+
+
+    </script>
+</body>
+</html>

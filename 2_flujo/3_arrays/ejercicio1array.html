@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio array 1</title>
+</head>
+<body>
+<script>
+//Crear un array de 10 numeros
+// pintar solo aquellos numeros que sean divisibles por 3 en una lista no numerada.
+
+
+const numeros = [12, 18, 67, 82, 1, 55, 31, 578, 892, 23]
+
+/*opcion 1 -  JUNIOR
+function pintarLista(pLista){
+let lista = '<ul>'  // UL encapsula la lista
+for (let i = 0; i < pLista.length; i++){
+    if(pLista[i] % 3 === 0) {
+        lista += `<li>${pLista[i]}</li>`
+        }
+    }
+    lista += '</ul>'   // cierre de la encapsulación
+    document.write(lista);
+}
+function divisible(pNum, pDivisible){
+        if(pNum % pDivisible === 0) {
+            return pNum + ' es divisible por' + pDivisible
+    }
+        return pNum + ' no es divisible por' + pDivisible
+    }
+pintarLista(numeros);
+*/
+
+
+//opción 2 - MEDIUM
+
+function pintarLista(pLista){
+let lista = '<ul>'
+for (let i = 0; i < pLista.length; i++){
+    console.log(pLista[i])
+    lista += `<li>${pLista[i]}</li>`;
+}
+lista += '</ul>'
+document.write(lista);
+}
+function filtrarDivisible(pLista, pNum){
+    let listaFiltrada = [];
+    let k= 0;
+    for(let i = 0; i < pLista.length; i++){
+        if(pLista[i] % pNum === 0) {
+            listaFiltrada[k] = pLista[i];
+            k++
+    }
+}
+return listaFiltrada
+}
+
+pintarLista(listaFiltrada(numeros, 2)) // con Callback el código es más sencillo
+
+let divisibles2 = listaFiltrada(numeros,2); // lo mismo que arriba pero con variable
+pintarLista(divisibles2)
+
+
+</script>
+</body>
+</html>

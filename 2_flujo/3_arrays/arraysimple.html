@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array simple</title>
+</head>
+<body>
+<script>
+// Un array es una lista de elementos
+// se debe declarar como const para evitar que se pueda modifica. Ojo esto no significa que no podamos añadir y eliminar elementos de la lista, significa que no puede dejar de ser una LISTA.
+
+// cómo declarar un array vacio
+const nombre = [];  // funcional
+const apellidos = new Array();  // POO - Programación orientada a objetos
+
+// declarar un array con datos
+
+const animales = ['perro', 'gato', 'periquito', 'hipopótamo', 'león']
+const frutas = new Array('Manzana', 'Pera', 'Platano');
+const numeros = [1, 2, 4, 23, 2212, 23, 545, 6]
+console.log(nombre);
+console.log(animales)
+
+//un array tiene longitud, la cantidad de elementos de la lista, pero los elementos de la lista se cuentan desde el 0 hasta "n -1", sientdo n la lingitud del array (length).
+//para poder sacar el valor de un elemento lo haremos con su posición
+console.log(animales[1]) // gato
+
+for (let i = 0; i < animales.length; i++) { // UN ARRAY SIEMPRE SE RECORRE DESDE 0 HASTA EL VALOR DE SU LONGITUD ("animales".LENGTH)
+    console.log(animales[i])
+}
+
+
+// quiero sacar por pantalla en html un listado no numerado con los nombres de las frutas
+
+//paso 1: recorrer la lista entera
+//paso 2: pintar por consola cada uno de los elementos
+//paso 3: incluirlos en un texto con html y pintarlo
+
+
+function pintarLista(pLista, pColor){
+let lista = '<ul>'  // UL encapsula la lista
+for (let i = 0; i < pLista.length; i++){
+    console.log(pLista[i])
+    lista += `<li style="color: ${pColor}">${pLista[i]}</li>`; // los LI numeran cada elemento del ARRAY
+}
+lista += '</ul>'   // cierre de la encapsulación
+document.write(lista);
+}
+
+pintarLista(frutas, 'green');
+pintarLista(animales, 'tomato');
+pintarLista(numeros, 'blue');
+
+</script>
+</body>
+</html>
