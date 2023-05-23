@@ -1,33 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tablero Ajedrez</title>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+  <body>
+    <!-- Disposición de tablero html
+<div style="display:flex;">
+    <div style = "background-color: gray; width: 100px;  height: 100px;"></div>
+    <div style = "background-color: black; width: 100px;  height: 100px;"></div>
+    <div style = "background-color: gray; width: 100px;  height: 100px;"></div>
+    <div style = "background-color: black; width: 100px;  height: 100px;"></div>
+    <div style = "background-color: gray; width: 100px;  height: 100px;"></div>
+</div>
 
-<body>
-
+<div style="display:flex;">
+    <div style = "background-color: black; width: 100px;  height: 100px;"></div>
+    <div style = "background-color: gray; width: 100px;  height: 100px;"></div>
+    <div style = "background-color: black; width: 100px;  height: 100px;"></div>
+    <div style = "background-color: gray; width: 100px;  height: 100px;"></div>
+    <div style = "background-color: black; width: 100px;  height: 100px;"></div>
+</div> -->
 
     <script>
+      //quiero que me pinteis un tablero de ajedrez donde las celdas van a ser grises y negras.
 
-        //quiero que me pinteis un tablero de ajedrez donde las celdas van a ser grises y negras.
+      //por pantalla pedis numero de casillas y tamaño de la casilla.
 
-        //por pantalla pedis numero de casillas y tamaño de la casilla.
+      //tres funciones
+      // El problema se divide en tres partes
+      // crear un casilla de color cualquiera
+      // crear un fila de casillas de color alternos
+      // pintar un tablero de filas consecutivas y tambien de colores alternos.
 
-        //tres funciones
-        // El problema se divide en tres partes
-        // crear un casilla de color cualquiera
-        // crear un fila de casillas de color alternos
-        // pintar un tablero de filas consecutivas y tambien de colores alternos.
+      //consejo antes de pintar nada resolver el problema en html.
 
-        //consejo antes de pintar nada resolver el problema en html.
+      //CORRECCIÓN
 
+      function pintarCelda(pColor, pAncho) {
+        return `<div style="background-color: ${pColor}; width: ${pAncho}px; height: ${pAncho}px;"></div>`;
+      }
 
+      function pintarFila(pColorImpar, pColorPar, pAncho, pNumeroCasillas) {
+        let fila = '<div style="display: flex">';
+        for (let i = 1; i <= pNumeroCasillas; i++) {
+          if (i % 2 !== 0) {
+            fila = fila + pintarCelda(pColorImpar, pAncho);
+          } else {
+            fila = fila + pintarCelda(pColorPar, pAncho);
+          }
+        }
+        fila = fila + "</div>";
+        document.write(fila);
+      }
 
+      function pintarTablero(pNumeroCasillas, pAncho) {
+        let colorPar = "";
+        let colorImpar = "";
+        for (let i = 1; i <= pNumeroCasillas; i++) {
+          colorPar = (i % 2 !== 0) ? 'grey' : 'black';
+          colorImpar = (i % 2 !== 0) ? 'black' : 'grey';
+          pintarFila(colorImpar, colorPar, pAncho, pNumeroCasillas);
+        }
+      }
+
+      let numeroCasillas = parseInt(prompt('Dime el numero de casillas'))
+      let anchoCasilla = parseInt(prompt('Dime el ancho de casilla'))
+      pintarTablero(numeroCasillas, anchoCasilla);
     </script>
-</body>
-
+  </body>
 </html>
