@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON - JavaScript Object Notation</title>
+</head>
+<body>
+<script>
+
+//JSON es el equivalente a lo que en otros lenguajes de programación se conoce como array asociativo. Elimina el concepto de posición para manejar el concepto de clave -> valor
+
+const producto = {
+    titulo: 'Leche desnatada',
+    precio: 0.50,
+    capacidad: 1.5,
+    stock: true,
+}
+
+
+//opción 1: Nomenclatura de corchete. Es la típica de los arrays. Y en este caso va a ser la más versátil.
+console.log(producto['titulo']) //leche desnatada
+console.log (producto['stock']) // true
+
+//opción 2: Nomenclatura de punto. Esta es la más común y la más usada normalmente.  TRATAMIENTO DE OBJETOS
+
+console.log(producto.precio)// 0.50
+console.log(producto.titulo) //leche desnatada
+
+let key = prompt('que quieres que te muestre: titulo, precio, cantidad, stock');
+
+//ERROR -> console.log(producto.key)
+alert(producto[key]) // mostrará CANTIDAD
+
+
+// a un JSON se le puede añadir en cualquier momento una nueva clave.
+
+producto.fechaCaducidad =  '17/03/2023';
+producto['codigo'] = '123124DFR';
+
+// podemos modificar el valor de una clave que ya existia
+producto.titulo = 'Leche semidesnatada';
+console.log(producto)
+
+// para recorrer JSON, y exculsivamente estos objectos "for IN"
+
+for(let key in producto){
+    document.write(`<p>${key}: ${producto[key]}</p>`)
+}
+
+const claves = Object.keys(producto)  // Object es una clase estática, como puede ser Math, u otras. Por eso va con Mayúscula al principio
+const valores= Object.values(producto)
+
+console.log(claves)
+console.log(valores)
+
+
+
+
+</script>
+</body>
+</html>

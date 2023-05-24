@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array multidimensional</title>
+</head>
+<body>
+    <script>
+
+//Array multidimensional: es un array cuyos elementos no son tipos de datos basicos, si no que son arrays. ARRAY DE ARRAYS
+
+const aves = ['Aguila', 'Guacamayo', 'Periquito']
+const felinos = ['Leon', 'Tigre', 'Lince', 'Leopardo','Puma']
+const anfibios = ['Hipopotamo', 'Rana', 'Cocodrilo']
+
+// zoo es un array multidimensional
+const zoo = [ felinos, aves, anfibios]   // el orden en el que los declaramos será el orden a seguir para acceder a los diferentes arrays de "ZOO"
+console.log(zoo)
+
+// sacar tigre
+console.log(zoo[0][1])     // posición 0 -> 1º array || posición 1 -> 2ªposición de ese array
+//sacar periquito
+console.log(aves [1] [2])
+
+
+
+for(let i=0; i<zoo.length; i++){  // i = 0, 1 y 2
+    for(let j=0; j<zoo[i].length; j++){ // j= 5 , 3 y 3  irá iterando en el bucle hasta alcanzar la longitud máxima de cada array (cuando alcance el máximo, cambiará el valor de i y por lo tanto de array)
+        console.log(zoo[i][j]) //
+    }
+}
+
+
+for(let especies of zoo){  // ARRAY MULTIDIMENSIONAL CON FOR OF
+    for(let animal of especies){
+        console.log(animal)
+    }
+}
+
+
+
+</script>
+</body>
+</html>

@@ -1,20 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicio 3</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-// 1 función que me pida 5 numeros por pantalla, me muestre la suma y la multiplicación de dichos numeros.
+      // 1 función que me pida 5 numeros por pantalla, me muestre la suma y la multiplicación de dichos numeros.
+
+      // CORRECCIÓN
+
+      //función para crear el array
+    function cargarDatos(pNum) {
+        let numero = 0;
+        const listaNumeros = [];    // ARRAY, contenedor LOCAL (se almacena aqui la información del array y luego será devuelto al final de la función)
+        for (let i = 0; i < pNum; i++) {
+            numero = parseInt(prompt("dime un numero")); //EN LUGAR DE PEDIR NUMERO 1 por 1, con un BUCLE
+          listaNumeros[listaNumeros.length] = numero; // un array se rellena con su longitud SIEMPRE (no se puede utilizar "+=")
+        }
+        return listaNumeros;
+    }
+    //función para mostrar por pantalla
+    function mostrarPantalla(pResultado, pOperacion = '') {
+        document.write(`<h2 style="color: tomato">${pResultado} ${pOperacion}</h2>`)
+    }
+    //función sumar
+    function sumarLista(pLista){
+        let suma = 0; // acumulador, la función suma es LOCAL en este momento
+        for(let i = 0; i < pLista.length; i++) {
+            suma += pLista[i];   // el " +=" si que puede utilzarse aqui ya que estamos "concatenando", sumando valores al acumulador "suma"
+        }
+        return suma // devuelve la función para poder utilizarla externamente
+    }
+    //const numeros = cargarDatos(5)  // ARRAY, y hace de contenedor GLOBAL, función anónima ( se ejecuta una función para llenar el array NUMEROS), si quiero un nuevo array tendría que llamar de nuevo a la función cargarDatos
+    // let resultadoSuma = sumarLista (numeros)  // A la función sumarLista ya le puedo introducir la lista creada en la función anterior "cargarDatos"
+
+
+// función multiplicar
+function multiplicar (pLista) {
+    let multiplicar = 1; // iniciamos el valor en 1 para no multiplicar por 0 (daría 0 siempre)
+for (var i = 0; i < pLista.length; i++) {
+    multiplicar *= pLista[i];
+}
+return multiplicar;
+}
+
+
+//Ejecución del ejercicio
+
+const numerosAntonio = cargarDatos(5)
+let resultadoMultiplicar = multiplicar(numerosAntonio)
+let resultadoSuma = sumarLista (numerosAntonio)
+mostrarPantalla (resultadoSuma, 'Suma');
+mostrarPantalla (resultadoMultiplicar, 'Multiplicación');
+
+
+    //   // EJERCICIO MIO
+
+    //   let num1 = Number(prompt("Dame un numero"));
+    //   let num2 = Number(prompt("Dame un numero"));
+    //   let num3 = Number(prompt("Dame un numero"));
+    //   let num4 = Number(prompt("Dame un numero"));
+    //   let num5 = Number(prompt("Dame un numero"));
+    //   const numeros = new Array(num1, num2, num3, num4, num5);
+
+    //   const suma = numeros.reduce(function (resultado, elemento) {
+    //     return resultado + elemento;
+    //   }, 0);
+    //   console.log(suma);
+    //   function calcular(pFunction) {}
+
+    //   const multiplicar = function (
+    //     pNumero1,
+    //     pNumero2,
+    //     pNumero3,
+    //     pNumero4,
+    //     pNumero5
+    //   ) {
+    //     document.write(
+    //       `<p> '${pNumero1} * ${pNumero2} * ${pNumero3} * ${pNumero4} * ${pNumero5} '</p>`
+    //     );
+    //   };
 
 
 
+      //opcion reduce
 
+      // const numeros = [1, 2, 3, 4];
+      // const suma = numeros.reduce(function (resultado, elemento) {
+      //   return resultado + elemento;
+      // }, 0);
+      // console.log(suma);
+
+      // opcion reduce Midu
+      // const arr = [1, 2, 3, 4, 5];
+      // const sum = arr.reduce((total, num) => total + num);
+      // console.log(sum);
+
+      // //opcion forEach
+      // let total = 0;
+      // numbers.forEach(number => total += number);
+      // message.channel.send(total);
+      // //opcion 3
 
 
     </script>
-</body>
+  </body>
 </html>

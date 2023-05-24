@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucle For OF</title>
+</head>
+<body>
+<SCRIPT>
+// for Of sirve para recorrer un array de cualquier tipo, se sigue recorriendo por posición pero nosotros no tenemos que estar contando. El bucle se encarga de saber cuando no tiene elementos.Por tanto se elimina el factor de longitud.
+
+const animales = ['león','águila','periquito', 'perro']
+
+
+// for (let animal of animales) {
+//     console.log(animal)
+// }
+
+function pintarLista(pLista){
+let lista = '<ul>'
+for (let animal of pLista){
+    lista += `<li>${animal}</li>`
+}
+    lista += '</ul>'
+    document.write(lista)
+}
+pintarLista(animales)
+
+
+
+
+</SCRIPT>
+</body>
+</html>
