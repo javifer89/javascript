@@ -6,8 +6,7 @@ function getPeligrosidad(pNum) {
 
 
 function getAnimalArticle(pAnimal) {
-    let html = `<article  class="${getPeligrosidad(pAnimal.peligrosidad)
-        }">
+    let html = `<article  class="${getPeligrosidad(pAnimal.peligrosidad)}">   
                     <h3>${pAnimal.raza}</h3>
                     <figure>
                         <img src="${pAnimal.foto}" alt="${pAnimal.raza}">
