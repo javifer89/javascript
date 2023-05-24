@@ -1,0 +1,60 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#animales{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#animales article{
+    border: 1px solid black;
+    padding: 0.625em;
+    margin: 0.625em;
+}
+
+#animales .peligroso{
+    border-color: tomato;
+    border-width: 3px;
+}
+
+#animales .cuidadin{
+    border-color: orange;
+    border-width: 3px;
+}
+
+#animales .ojito{
+    border-color: gold;
+    border-width: 3px;
+}
+
+#animales .suavecito{
+    border-color: green;
+    border-width: 3px;
+}
+
+#animales .docil{
+    border-color: lightblue;
+    border-width: 3px;
+}
+
+@media(min-width: 37.5em){
+    #animales article{
+        width: calc(50% -  1.25em);
+    }
+}
+
+
+@media(min-width: 62.75em){
+    #animales article{
+        width: calc(33.333% -  1.25em);
+    }
+}
