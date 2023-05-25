@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//IndexOf para arrays simples y findIndex para ARRAY Multidimensionales
+// buscan un elemento dentro del array, si lo encuentran devuelve su POSICIÓN.
+// si no encuentra lo que buscamos devuelve -1, por defecto(no existe el elemento en la lista).
+//si quisieramos eliminar un objeto de un array, necesitaremos saber su posición previamente, por lo tanto utilizariamos uno de estos metodos.
+
+const animales = ['León', 'Gato', 'Periquito', 'Aguila'];
+let posicion = animales.indexOf('Gato')
+console.log(posicion)
+
+const alumnos = [
+        { nombre: "Juan", edad: 40 },
+        { nombre: "Lucia", edad: 23 },
+        { nombre: "Antonio", edad: 30 },
+        { nombre: "Daniel", edad: 21 },
+        { nombre: "Rodrigo", edad: 28 },
+      ]
+      let posicion2 = alumnos.findIndex(alumno => alumno.nombre === "Juan")
+
+      console.log(posicion2)
+      alumnos.splice(posicion2, 1)
+    </script>
+</body>
+</html>
