@@ -19,7 +19,7 @@
 
 ### Ejercicio de hospital
 
-    - Crear un array de 10 pacientes con la siguiente informacion
+    - Crear un array de 10 pacientes con la siguiente informacion✅
           - nombre, apellido, edad, diagnostico, numeroSS
   
     - Crear las funciones necesaria para mostrar por consola.
@@ -27,3 +27,10 @@
         - sacar todos los pacientes con gripe
         - sacar todos los paciente entre 18 y 25 aÃ±os
         - sacar los pacientes cuyo numero de la ss acabe en 0;
+
+
+    DOM
+
+
+
+    INTERFAZ CON BOTONES

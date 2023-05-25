@@ -1,10 +1,10 @@
-const pacientes = [ 
+const pacientes = [
     {
         nombre: 'Pedro',
         apellido: 'Gutierrez',
         edad: 34,
         diagnostico: 'diabetes',
-        numeroSS: 342293
+        numeroSS: 3422930
     },
     {
         nombre: 'Marga',
