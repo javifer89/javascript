@@ -9,11 +9,28 @@
 <body>
 <script>
     //.PUSH - Sirve para introducir elementos en un array de cualquier tipo POR EL FINAL.
+    // sirve para cualquier tipo de array y devuelve la nueva longitud del array.
     const animales = ['León', 'Gato', 'Periquito', 'Aguila'];
 
     let animal = 'Cuervo'
-    animales.push(animal)
-    
+    let nuevaLongitud = animales.push(animal, 'Hipopotamo') // estamos añadiendo a la variable animal a la vez que hacemos .PUSH
+console.log(animales)
+console.log(nuevaLongitud)
+
+
+
+// pedir frutas por pantalla y añadirlas al array de frutas
+
+let numero = parseInt(prompt('dime un numero de frutas'));
+for(let i=1; i<numero; i++){
+    let fruta = prompt('dime una fruta');
+    frutas.push(fruta);
+}
+console.log(frutas);   // se mete cada fruta en el array mientras se recorre el bucle.
+
+
+
+
 </script>
 </body>
 </html>

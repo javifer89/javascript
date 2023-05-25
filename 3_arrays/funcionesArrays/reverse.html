@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REVERSE</title>
+</head>
+<body>
+<script>
+// REVERSE  invierte las posiciones de los elementos del array. MODIFICA el array original
+
+const animales = ['León', 'Gato', 'Periquito', 'Aguila'];
+// const animalesInvertido = animales.reverse();
+console.log(animalesInvertido)
+console.log(animales)
+
+// SPREADOPERATOR ...   realiza una copia virtual (no se almacena en ningún sitio), por lo tanto no se modifica el array original.
+const animalesInvertido = [...animales].reverse;
+
+//.toReversed() --- Hace lo mismo que reverse pero sin modificar el array principal. Actualmente esta en versión Alpha (mayo 2023), por lo que no funciona en todos los navegadores.
+
+const otro = animales.toReversed();
+
+
+
+</script>
+</body>
+</html>

@@ -14,17 +14,19 @@ function mostrarListaPacientes(pListaPacientes) {
  * recibe dos parametros listapaciente array de json y diagnostico es un string
  * devuelve una lista de pacientes en formato json
  */
-function filterPatientsByDiagnosis(pListaPacientes, pDiagnostico) {
 
-  const listaFiltrada = [];
-  
-  for (let paciente of pListaPacientes) {
-    if (paciente.diagnostico.toLowerCase() === pDiagnostico.toLowerCase()) {
-      listaFiltrada[listaFiltrada.length] = paciente;
-    }
-  }
-  return listaFiltrada;
-}
+
+// Opción 1 refactorizado
+//function filterPatientsByDiagnosis(pListaPacientes, pDiagnostico) {
+//   return pListaPacientes.filter(paciente => paciente.diagnostico.toLowerCase() === pDiagnostico.toLowerCase())
+// }
+
+//Opción 2 refactorizado
+const filterPatientsByDiagnosis = (pListaPacientes, pDiagnostico) => pListaPacientes.filter(paciente => paciente.diagnostico.toLowerCase() === pDiagnostico.toLowerCase())
+let resultado = filterPatientsByDiagnosis(pacientes, 'gripe')
+
+
+
 
 // sacar pacientes 18 y 25 años
 

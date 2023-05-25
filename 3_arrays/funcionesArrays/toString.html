@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toString</title>
+</head>
+<body>
+    <script>
+        
+//toString pasaría a TEXTO un ARRAY.
+
+const animales = ['León', 'Gato', 'Periquito', 'Aguila'];
+
+let p = '<p>'
+    for (let animal of animales){
+        p += animal + " ,";  // habria que indicar con un condicional para no poner coma al final.
+    }
+        p += '</p>'
+        document.write(p);
+
+        const texto = animales.toString();  // Es mucho más sencillo con el .toString
+        document.write(`<p>${texto}</p>`);
+
+    </script>
+</body>
+</html>

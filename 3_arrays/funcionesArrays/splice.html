@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPLICE</title>
+</head>
+<body>
+<script>
+// SPLICE modifica el array principal (no genera una copia ), porque corta y borra un elemento de la lista, modificando sus posiciones.
+//Devuelve un array de 1 o varios elementos (a diferencia de pop que solo devuelve el elemento eliminado)
+//Recibe 2 parámetros (pop y shift no recibian parámetros): el 1º es la posición desde la que parte y el 2º es la cantidad de elementos que borramos desde esa posición inicial
+
+const animales = ['León', 'Gato', 'Periquito', 'Aguila'];
+
+const listaCortada= animales.splice(1, 2);
+console.log(listaCortada);  // nueva lista
+console.log(animales) // anterior lista modificada
+
+
+
+</script>
+</body>
+</html>

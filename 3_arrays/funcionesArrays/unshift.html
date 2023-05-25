@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unshift</title>
+</head>
+<body>
+<script>
+//Introduce elementos en un array por el principio, recalculando las nuevas posiciones de los demás elementos. Devuelve como push la nueva longitud del array.
+const animales = ['León', 'Gato', 'Periquito', 'Aguila'];
+let animal = 'Pulpo'
+let animalAnadido = animales.unshift(animal, 'Hipopotamo'); //ocurre igual que en PUSH pero por el principio
+console.log(animales)
+console.log(animalAnadido)
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FILTER</title>
+</head>
+<body>
+<SCRIPT>
+// FILTER sirve para buscar uno o más elementos. Por lo tanto buscará varios elementos y devuelve un ARRAY (aunque sea solo de 1 elemento).
+
+const alumnos = [
+        { nombre: "Juan", edad: 40 },
+        { nombre: "Lucia", edad: 23 },
+        { nombre: "Antonio", edad: 30 },
+        { nombre: "Daniel", edad: 21 },
+        { nombre: "Rodrigo", edad: 28 },
+      ]
+ // buscar alumnos que sean menores de 30 años
+
+ function filterByAge(pList, pAge){   // se encapsula en la function para controlar cuando ejecutar el filtrado
+const filterList = pList.filter(alumno => alumno.edad <= pAge);
+console.log(filterList)
+ }
+ filterByAge(alumnos, 32)
+
+
+</SCRIPT>
+</body>
+</html>

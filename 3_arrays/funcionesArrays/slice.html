@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLICE</title>
+</head>
+<body>
+<SCRIPT>
+//SLICE captura (copia) uno o varios elementos de un array en la posición que yo quiera y siempre consecutivos.
+//Recibe dos parametros, el primero es la posición desde la que partimos y el segundo es la posición qu queremos copiar, pero sin incluir dicha posicion.
+//slice no modifica el array original.
+
+const animales = ['León', 'Gato', 'Periquito', 'Aguila', 'Hipopotamo','Rana', 'Llama', 'Pez'];
+
+const trocitoAnimales = animales.slice(1, 4 ) // Copiaria desde la posición 1 a la posición 3.
+
+const ultimoElemento = animales.slice(animales.length-1, animales.length) // copiaria solamente el ÚLTIMO ELEMENTO
+//.SLICE también tiene la posibilidad de manejar números negativos. No necesita indicar el punto de partida, se cuenta desde el final hacia la izquierda.
+const ultimoElemento2= animales.slice(-1) // devolvería ['pez']
+const otroArray =animales.slice(-2)// devolvería ['llama' y 'pez']
+
+</SCRIPT>
+</body>
+</html>
