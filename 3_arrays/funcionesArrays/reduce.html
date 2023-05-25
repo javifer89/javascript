@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reduce</title>
+</head>
+
+<body>
+
+    <script>
+
+        //reduce - reducir a una expresión un array.
+
+        const numeros = [25, 2, 35];
+
+        const multi = numeros.reduce((acumulado, valor) => {
+            return acumulado * valor;
+        })
+
+        console.log(multi);
+
+
+        const letras = ['c', 'a', 'f', 'e', '?'];
+
+        const resultado = letras.reduce((acumulador, letra) => {
+            return acumulador + letra;
+        })
+
+        console.log(resultado);
+
+
+    </script>
+
+</body>
+
+</html>

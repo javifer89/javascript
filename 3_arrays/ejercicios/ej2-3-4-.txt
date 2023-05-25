@@ -1,0 +1,13 @@
+//Tarea 2 - Dada una frase cualquiera, pedir una letra del abc y contar cuantas veces se repite esa letra en la frase. Da igual que sean mayusculas o minisculas.
+
+//En un lugar de la mancha
+// e -> 2
+
+
+//Tarea 3 - - Dada una frase cualquiera, darle la vuelta a todas las palabras.
+// Tony Stark -> Stark Tony
+
+
+//Tarea 4: Dado un array de numeros negativos y positivos, devolver el array con numeros que sean negativos convertidos a positivos y viceversa.
+
+//[-1,5,-4,7] => [1,-5,4,-7]

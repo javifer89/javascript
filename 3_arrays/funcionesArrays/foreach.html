@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>foreach - es un funcion de bucle</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        const alumnos = [
+            { nombre: 'Juan Antonio', edad: 40 },
+            { nombre: 'Lucia', edad: 20 },
+            { nombre: 'Antonio', edad: 23 },
+            { nombre: 'Marta', edad: 37 },
+            { nombre: 'Rodrigo', edad: 18 },
+        ]
+
+
+        //foreach es el ultimo de los bucles y permite recorrer un array de cualquier tipo. A nivel profesional es el bucle mas usado. Elimina las llaves y produce menos bandera en tu codigo.
+
+        function printOneStudent(pStudent) {
+            document.write(`<p>${pStudent.nombre} -  ${pStudent.edad}</p>`)
+        }
+
+        function printStudents(pStudentList) {
+            pStudentList.forEach(student => printOneStudent(student));
+        }
+
+        printStudents(alumnos)
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

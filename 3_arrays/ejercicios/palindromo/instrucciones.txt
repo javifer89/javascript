@@ -1,0 +1,9 @@
+ //un palindromo es una frase que se lee igual de izquierda a derecha sin contar espacios y sin contar mayusculas y miniscula
+
+        //objetivo 1  - encapsular en una funcion
+        //objetivo 2 - investigar como quitar los espacios a una cadena de caracteres
+        //Comparar la estructura resultante con la misma dada la vuelta.
+
+
+Ana 
+La ruta nos aporto otro paso natural

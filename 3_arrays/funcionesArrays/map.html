@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map funcion de mapeo</title>
+</head>
+
+<body>
+
+    <script>
+
+        //map crea un array nuevo cuyo resultado es el array de origen al que se aplica una transformacion. Es decir le aplica a cada elemento por separado una transformacion.
+
+        const numeros = [1, 2, 3, 4, 5, 6, 7];
+        const dobles = numeros.map(numero => numero * 2)
+
+
+        const ciudades = new Array('MadriD', 'BArceLona', 'ValLadolid', 'ZARAgoza', 'CoRUña');
+
+        const ciudadesMinusculas = ciudades.map(ciudad => ciudad.toLowerCase())
+
+        console.log(ciudadesMinusculas);
+    </script>
+
+</body>
+
+</html>

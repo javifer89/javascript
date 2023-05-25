@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//Tarea 4: Dado un array de numeros negativos y positivos, devolver el array con numeros que sean negativos convertidos a positivos y viceversa.
+
+//[-1,5,-4,7] => [1,-5,4,-7]
+
+const arrayNumeros = [-1,5,-4,7]
+
+function toPositive (pNum){
+    let number = Math.abs(pNum);
+    return number
+}
+console.log(toPositive(-1))
+
+
+function toNegative (pNum){
+    let number = (pNum)*(-1);
+    return number
+}
+console.log(toNegative(5))
+
+
+    </script>
+</body>
+</html>

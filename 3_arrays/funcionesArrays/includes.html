@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>includes</title>
+</head>
+
+<body>
+
+    <script>
+
+        //me permite buscar dentro de un string  otro string. Devuelve solo true o false si existe el string secundario dentro del principal
+        //includes
+        //startWidth
+        //endsWidth
+
+        let frase = "En un lugar de la mancha";
+        let palabra = "Mancha";
+
+        let resultado = frase.toLowerCase().includes(palabra.toLowerCase())
+
+
+        const alumnos = [
+            { nombre: 'Juan Antonio', edad: 40 },
+            { nombre: 'Lucia', edad: 20 },
+            { nombre: 'Antonio', edad: 23 },
+            { nombre: 'Marta', edad: 37 },
+            { nombre: 'Rodrigo', edad: 18 },
+        ]
+
+
+        function searchByName(pList, pBusqueda) {
+
+            const filterList = pList.filter(alumno => {
+                return alumno.nombre.toLowerCase().includes(pBusqueda.toLowerCase())
+            })
+
+            console.log(filterList);
+        }
+
+        searchByName(alumnos, 't')
+
+
+
+
+    </script>
+
+</body>
+
+</html>
