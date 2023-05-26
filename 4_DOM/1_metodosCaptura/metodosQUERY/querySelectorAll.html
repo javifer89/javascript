@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelectorAll</title>
+</head>
+
+<body>
+
+    <ul class="menu">
+        <li><a href="">Item 1</a></li>
+        <li><a href="">Item 2</a></li>
+        <li><a href="">Item 3</a></li>
+        <li><a href="">Item 4</a></li>
+    </ul>
+
+    <script>
+
+        //querySelectorAll funciona de la misma manera que querySelector pero me captura un array de nodos, no un HTMLColletion. NodeList me permite usar algunos metodos de los explicados en arrays por ejemplo forEach.
+
+        //coger todos los enlaces y cambiar el texto por enlace $
+
+        let enlaces = document.querySelectorAll('.menu li a'); //NodeList
+
+        /*
+        let i = 1;
+        for (let enlace of enlaces) {
+            enlace.textContent = `Enlace ${i++}`
+        }
+        */
+
+        enlaces.forEach((enlace, i) => { enlace.textContent = `Enlace ${i + 1}` })
+
+    </script>
+
+</body>
+
+</html>

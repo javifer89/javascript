@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelector</title>
+</head>
+
+<body>
+
+    <span>Hola <a href="">enlace</a></span>
+
+    <ul class="menu">
+        <li><a href="">Item 1</a></li>
+        <li><a href="">Item 2</a></li>
+        <li><a href="">Item 3</a></li>
+    </ul>
+
+    <span>Adios <a href="">enlace</a></span>
+
+    <div class="menu"></div>
+    <div id="cuadrado"></div>
+
+    <script>
+
+        //querySelector es una funcion que me permite capturar objetos del DOM es un variabla javascript. El metodo captura el primer objeto que cumpla la condicion marcada por la herencia css.
+
+        //me devuelve un objeto del DOM no un array.
+
+        //quiero capturar el primer a del menu y cambiarle el texto
+
+
+        //metodos get
+        const menus = document.getElementsByClassName('menu');
+        const menu = menus[0];
+
+        const enlaces = menu.getElementsByTagName('a');
+        enlaces[0].innerText = "hola";
+
+
+        //metodos query voy a cambiar el tercer enlace.
+
+        const enlace3 = document.querySelector('.menu li:last-child a');
+        enlace3.innerText = 'Query Selector';
+
+        const cuadrado = document.querySelector('#cuadrado');
+
+        const enlaceSuelto = document.querySelector('div:nth-child(5)');
+        enlaceSuelto.textContent = "he cambiado el ultimo enlace con span";
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementsByClassName</title>
+</head>
+
+<body>
+
+    <p class="impar">item 1</p>
+    <p class="par">item 2</p>
+    <p class="impar">item 3</p>
+    <p class="par">item 4</p>
+    <p class="impar">item 5</p>
+
+    <div>
+        <p class="par">Item 6</p>
+    </div>
+
+    <p>Otro p sin clase</p>
+
+
+    <script>
+
+        //todos los parrafos = document.getElementsByTagName('p');
+
+        //todos los parrafos impares
+
+        const impares = document.getElementsByClassName('impar');
+        console.log(impares[1]);
+        impares[1].textContent += " impar"
+
+
+
+
+    </script>
+</body>
+
+</html>
