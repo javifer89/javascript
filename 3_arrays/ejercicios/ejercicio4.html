@@ -12,22 +12,42 @@
 
 //[-1,5,-4,7] => [1,-5,4,-7]
 
-const arrayNumeros = [-1,5,-4,7]
 
-function toPositive (pNum){
-    let number = Math.abs(pNum);
-    return number
+// EJERCICIO MIO
+// const arrayNumeros = [-1,5,-4,7]
+
+// function toPositive (pNum){
+//     let number = Math.abs(pNum);
+//     return number
+// }
+// console.log(toPositive(-1))
+// const arrayNumeros2 = numero => arrayNumeros.map(numero < 0  .toPositive(numero) && numero>=0 .toNegative(numero))
+// console.log(arrayNumeros2(arrayNumeros))
+// paciente => paciente.edad >= pAgeMin && paciente.edad <= pAgeMax
+// function toNegative (pNum){
+//     let number = (pNum)*(-1);
+//     return number
+// }
+// console.log(toNegative(5))
+
+
+const array = [-1,5,-4,7]
+//version 1      Esta bien pero con un .MAP es mucho más practico.
+function cambioSigno(pNumeros){
+    const numInvertido= []
+    pNumeros.forEach( numero => {
+        numInvertido.push(numero * (-1))
+    })
+    return numInvertido;
 }
-console.log(toPositive(-1))
-
-
-function toNegative (pNum){
-    let number = (pNum)*(-1);
-    return number
+//version 2
+function changeSign(pNumbers){
+    return pNumbers.map(number => number * (-1))
 }
-console.log(toNegative(5))
+let arrayResultante = changeSign(array)
+console.log(arrayResultante)
 
 
-    </script>
+</script>
 </body>
 </html>

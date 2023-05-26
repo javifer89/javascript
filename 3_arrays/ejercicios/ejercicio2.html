@@ -11,10 +11,18 @@
         ////Tarea 2 - Dada una frase cualquiera, pedir una letra del abc y contar cuantas veces se repite esa letra en la frase. Da igual que sean mayusculas o minusculas.
 
         ////En un lugar de la mancha
-// e -> 2
-const frase = 'En un lugar de la mancha'
-const fraseArray = frase.split(" ")
-console.log(fraseArray)   // array normal
+        // e -> 2
+
+        const frase = 'En un lugar de la mancha'
+
+function cuentaLetras (pTexto, pLetra){
+
+    let array = pTexto.split("");
+    let arrayFiltrado = array.filter(caracter => caracter.toLowerCase() === pLetra.toLowerCase());//la longitud del array será la cantidad de letras repetidas
+    return arrayFiltrado.length;
+}
+let result = cuentaLetras(frase, 'A');
+console.log(result);
 
 
 

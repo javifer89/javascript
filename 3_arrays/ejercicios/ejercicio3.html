@@ -15,13 +15,23 @@ const frase = ['la', 'casa', 'azul', 'es','enorme']
 
 
 const fraseInvertida = frase.reverse();
-console.log(frase);  
+console.log(frase);
 
 const texto = fraseInvertida;
-console.log(fraseInvertida.join(""));
+console.log(fraseInvertida.join(" "));
 
+//version 1
+function invertirFrase(pFrase){
+    const array = pFrase.split(" ")
+    const arrayInvertido = array.reverse()
+    const resultado = arrayInvertido.join(" ")
+    console.log(resultado)
+}
 
+//version 2 (es como la 1 pero refactorizada)
+const invertirFrasePro = pFrase => pFrase.split(" ").reverse().join(" ")
+console.log(invertirFrasePro('Tony Stark'))
 
-   </script>
+</script>
 </body>
 </html>
