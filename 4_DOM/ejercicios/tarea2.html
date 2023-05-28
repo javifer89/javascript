@@ -16,9 +16,29 @@
 
     <script>
 
-            //crear un listado de n numeros, y repartir los numeros pares en el ul de pares y los impares en el ul impares. 
+            //crear un listado de n numeros, y repartir los numeros pares en el ul de pares y los impares en el ul impares.
+
+            const numeros = [2,4,23,5,33,76,67,24,51,6,77,12,14,15]
 
 
+            let ulElement = document.querySelector('ul .par');
+            numeros.forEach(function(seccion)  {
+                if (numero % 2 === 0) {
+            let liElement = document.createElement('li');
+            liElement.textContent = seccion;
+            ulElement.appendChild(liElement);
+                }
+            })
+
+
+            let ulElement2 = document.createElement('ul .impar')
+            numeros.forEach(function(seccion)  {
+                if (numero % 2 !== 0) {
+            let liElement2 = document.createElement('li');
+            liElement2.textContent = seccion;
+            ulElement2.appendChild(liElement2);
+                }console.log(liElement2)
+            })
 
     </script>
 </body>

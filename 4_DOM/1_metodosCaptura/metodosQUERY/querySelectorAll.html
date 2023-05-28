@@ -19,11 +19,12 @@
 
     <script>
 
-        //querySelectorAll funciona de la misma manera que querySelector pero me captura un array de nodos, no un HTMLColletion. NodeList me permite usar algunos metodos de los explicados en arrays por ejemplo forEach.
+        //querySelectorAll funciona de la misma manera que querySelector pero me captura un array de nodos, no un HTMLCollection. NodeList me permite usar algunos metodos de los explicados en arrays por ejemplo forEach.
 
         //coger todos los enlaces y cambiar el texto por enlace $
 
-        let enlaces = document.querySelectorAll('.menu li a'); //NodeList
+        let enlaces = document.querySelectorAll('.menu li a'); //NodeList (array que me permite utilizar ciertas funciones como forEach)
+
 
         /*
         let i = 1;
@@ -32,7 +33,7 @@
         }
         */
 
-        enlaces.forEach((enlace, i) => { enlace.textContent = `Enlace ${i + 1}` })
+        enlaces.forEach((enlace, i) => { enlace.textContent = `Enlace ${i + 1}` }) // forEach recibe una función flecha, su función de callback puede recibir uno o dos parámetros (enlace, i)
 
     </script>
 

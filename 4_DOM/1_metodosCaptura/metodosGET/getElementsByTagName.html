@@ -19,12 +19,13 @@
     </div>
 
     <script>
-        const parrafos = document.getElementsByTagName('p');
-        //Elements me devuelve cuasi un array se comporta como array pero no tiene sus metodos.
+        const parrafos = document.getElementsByTagName('p');  // con getElementsByTagName no puedo seleccionar una etiqueta concreta, tenemos que seleccionar todas las <p>. Por lo tanto la constante parrafos se llenará de los <p> que encuentre en html (porque estamos indicandole DOCUMENT, sería el nodo principal. Si indicasemos div por ejemplo, seleccionaría los elementos dentro de los div)
+
+        //Elements me devuelve cuasi un array, se comporta como array pero no tiene sus metodos (no se le puede hacer forEach, push, map, etc. tiene sus propios metodos).
 
         console.log(parrafos[0])
 
-        //modificaciones de textos. innerHTML, innerText, textContent
+        //modificaciones de textos. innerHTML, innerText, textContent (se recomienda utilizar textContent, innerText se dice que esta deprecado)
         parrafos[0].textContent = '<em>Paula</em>';
 
         function cambiarTexto(pNum, pListDom, pTexto) {

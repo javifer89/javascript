@@ -32,6 +32,31 @@
         //llenar los ul de cada una de la secciones header y footer en el header poner el listado de secciones y el footer poner el listado legal.
 
 
+
+let secciones = ["Home", "Servicios", "Contacto", "Galeria"];
+
+
+let legal = ["Aviso Legal", "Cookies"];
+
+
+
+    let ulElement = document.querySelector('ul');
+
+
+secciones.forEach(function(seccion) {
+   let liElement = document.createElement('li');
+   liElement.textContent = seccion;
+   ulElement.appendChild(liElement);
+});
+
+
+    let ulElement2 = document.querySelector('footer ul');
+legal.forEach(function(item) {
+   let liElement2 = document.createElement('li');
+   liElement2.textContent = item;
+   ulElement2.appendChild(liElement2);
+});
+
     </script>
 
 </body>
