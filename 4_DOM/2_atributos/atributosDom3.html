@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar styles con el DOM</title>
+    <style>
+        .cuadrado{
+            background-color: tomato;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="cuadrado"></div>
+<script>
+    const cuadrado = document.querySelector('.cuadrado')
+    //no todas las propiedades de los objetos del DOM son de lectura y escritura. offsetLeft solo me vale para leer la posición, no la puede modificar.
+    // cuadrado.offsetLeft = 0;
+    // cuadrado.style.backgroundColor= 'blue' // para modificar estos atributos con javascript, se eliminan los guiones y se aplica camelCase
+    //hacer una funcion que me permita cambiar el margin y el radio de mi cuadrado
+    function pintarCuadrado(pDom, pMargin,pRadio,pTransition,pDeg){
+        pDom.style.margin= pMargin + 'px';
+        pDom.style.borderRadius= pRadio;
+        pDom.style.transition='1s'
+        pDom.style.transform= `rotateZ(${pDeg}deg)`
+    }
+
+    
+    console.dir(cuadrado) // PARA VER LAS PROPIEDADES DEL OBJETO EN LA CONSOLA, SE UTILIZA CONSOLE.DIR EN LUGAR DE CONSOLE.LOG (PARA CHROME, en FIREFOX funciona con .LOG)
+    </script>
+</body>
+</html>

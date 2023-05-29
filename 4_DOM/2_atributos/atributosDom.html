@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atributos dom</title>
+</head>
+<body>
+
+    <ul id="menu">
+        <li><a href="http://www.amazon.es">Amazon</a></li>
+        <li><a href="http://www.yahoo.es">Yahoo</a></li>
+        <li><a href="http://www.google.es">Google</a></li>
+    </ul>
+
+<script>
+//quiero cambiar la propiedad de CSS href de todos mis enlaces. Este cambio es dinámico y no se verá en el codigo fuente.
+const enlaces = document.querySelectorAll('#menu a')
+//Para poder modificar una propiedad de objeto del DOM tenemos que referirnos a ese objeto y determinar su propiedad
+enlaces[0].href="http://www.idbootcamps.com"
+//Para cambiar todos los enlaces, recorremos el array enlaces
+for(let enlace of enlaces){
+    enlace.href = 'http://www.idbootcamps.com'
+    enlace.target= '_blank'
+    enlace['title']= 'idbootcamps donde trabaja el mejor profe del mundo' // tooltip, donde aparece una descripcion cuando dejamos el cursor encima del enlace
+}
+
+
+</script>
+</body>
+</html>

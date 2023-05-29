@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+        img{
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        figure{
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 10px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <figure class="galeria">
+        <img src="./img/news1.jpg" alt="copa vino">
+    </figure>
+    <script>
+        //capturar el img del dom
+        const imgDom = document.querySelector(".galeria img");
+
+        // crear una función que permita cambiar el src de cualquier imagen por la que yo decida.
+
+        function cambiarImagen (pNewImg, pDom){
+            pDom.src = `img/news${pNewImg}.jpg`;
+        }
+        cambiarImagen(2, imgDom)
+
+// para realizar un carrusel automático necesitamos que las fotos cambien cada x segundos. Para ello necesito que la función changeImg se ejecute cada x segundos.
+
+//FUNCIONES INTERVÁLICAS, hay 2 tipos:
+
+//setTimeOut(), se le pasan dos parametros, el primero es un callback que se ejecutará después de x segundos, el segundo es tiempo en milisegundos (1s = 1000ms). DELAY se produce solo una vez.
+
+//setInterval(), se le pasan dos parametros, el primero es un callback y es la función que se llama cada x milisegundos. El segundo son los milisegundos. Se repite indefinidamente.
+
+//una buena practica es meter las funciones intervalicas en una constante para poder parar su ejecución.
+
+let i= 1
+const intervalo = setInterval( () =>{ // esta es la forma de cómo se implementan las funciones setInterval normalmente. DEBEMOS PONER NOMBRE AL INTERVALO, PARA PODER IDENTIFICARLO Y CONTROLARLO (PARARLO)
+    i= (i>= 4) ? 1 : i +1 // este bucle se simplifica con el OPERADOR TERNARIO, pero funciona igual que en el bucle if else desplegado
+    // if(i >= 4){
+    //     i=1;
+    // }else{
+    // i++;
+    // }
+    cambiarImagen (i, imgDom);
+}, 2000);
+
+//Como se paran los intervalos: con la funcion clearInterval pasando por parametro el nombre del intervalo a parar.
+function parar(){
+    clearInterval(intervalo)
+}
+
+
+
+    </script>
+</body>
+</html>
