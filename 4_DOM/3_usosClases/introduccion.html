@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción al uso de clases</title>
+    <style>
+        .cuadrado {
+            width: 100px;
+            height: 100px;
+            transition: 1s;
+        }
+
+        .red {
+            background-color: tomato;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .tamano {
+            width: 400px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="cuadrado green"></div>
+
+
+    <script>
+
+        const cuadrado = document.querySelector('.cuadrado');
+
+        cuadrado.className = 'cuadrado red'
+
+    </script>
+
+</body>
+
+</html>

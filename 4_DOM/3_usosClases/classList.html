@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción al uso de clases</title>
+    <style>
+        .cuadrado {
+            width: 100px;
+            height: 100px;
+            transition: 1s;
+        }
+
+        .red {
+            background-color: tomato;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .tamano {
+            width: 400px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="cuadrado green"></div>
+
+
+    <script>
+
+        const cuadrado = document.querySelector('.cuadrado');
+
+        //ClassList que es un array con todas las clases
+
+        console.log(cuadrado.classList);
+
+        //error: classList es de solo lectura
+        //cuadrado.classList[1] = 'red';
+
+        //classList.remove me quita la clase o clases que ponga entre parentesis
+        cuadrado.classList.remove('green');
+
+        //classList.add añade cualquier clase al array clases
+        cuadrado.classList.add('red');
+
+        //classList.replace('classSaliente', 'classEntrante');
+
+        cuadrado.classList.replace('red', 'blue');
+
+        //classList.toogle si existe la clase que paso como parametro la borra y si no existe la pone.
+
+        function cambiarTamano() {
+            cuadrado.classList.toggle('tamano')
+        }
+
+    </script>
+</body>
+
+</html>

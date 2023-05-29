@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear elementos del dom</title>
+    <script>
+        const frases = [
+            {
+                id: 1,
+                frase: 'Solo se que no se nada',
+                autor: 'Descartes'
+            },
+            {
+                id: 2,
+                frase: 'Yo no perteneceria a ningun club que me admitiese como socio',
+                autor: 'Marx'
+            },
+            {
+                id: 3,
+                frase: 'Eres un fristro pecadorrrrrr',
+                autor: 'Chiquito de la calzada'
+            }
+        ]
+    </script>
+</head>
+
+<body>
+
+    <section id="frases">
+        <!--  <article>
+            <h3>Solo se que no se nada</h3>
+            <p>Autor: Descartes</p>
+            <hr>
+        </article> -->
+    </section>
+
+
+    <script>
+
+        const sectionFrases = document.querySelector('#frases');
+
+
+        /*
+        <article>
+            <h3>Solo se que no se nada</h3>
+            <p>Autor: Descartes</p>
+            <hr>
+        </article>
+      */
+
+        function printOneSentence(pSentence, pDom) {
+            const article = document.createElement('article'); //<article></article>
+            article.classList.add('frase');
+
+            const h3 = document.createElement('h3'); // <h3><h3>
+            h3.textContent = pSentence.frase; // <h3>Solo se que no se nada</h3>
+
+            const p = document.createElement('p'); //<p></p>
+            p.style.color = (pSentence.id % 2 === 0) ? 'tomato' : 'violet';
+            p.textContent = `Autor: ${pSentence.autor}`; //<p>Autor: Descartes</p>
+
+            const hr = document.createElement('hr'); //<hr>
+
+            article.append(h3, p, hr); //  <article><h3>Solo se que no se nada</h3><p>Autor: Descartes</p><hr></article>
+            //article.appendChild(h3)
+
+            pDom.append(article);
+
+        }
+
+
+
+        function printSentences(pList, pDom) {
+            pList.forEach(sentence => printOneSentence(sentence, pDom))
+        }
+
+        printSentences(frases, sectionFrases);
+
+
+
+    </script>
+</body>
+
+</html>
