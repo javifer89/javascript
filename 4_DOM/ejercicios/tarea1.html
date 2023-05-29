@@ -31,34 +31,46 @@
 
         //llenar los ul de cada una de la secciones header y footer en el header poner el listado de secciones y el footer poner el listado legal.
 
+        //EJERCICIO MIO
+// let secciones = ["Home", "Servicios", "Contacto", "Galeria"];
+
+// let legal = ["Aviso Legal", "Cookies"];
 
 
-let secciones = ["Home", "Servicios", "Contacto", "Galeria"];
+//     let ulElement = document.querySelector('header ul');
+// secciones.forEach(function(seccion) {
+//    let liElement = document.createElement('li');
+//    liElement.textContent = seccion;
+//    ulElement.appendChild(liElement);
+// });
 
 
-let legal = ["Aviso Legal", "Cookies"];
+//     let ulElement2 = document.querySelector('footer ul');
+// legal.forEach(function(item) {
+//    let liElement2 = document.createElement('li');
+//    liElement2.textContent = item;
+//    ulElement2.appendChild(liElement2);
+// });
 
 
 
-    let ulElement = document.querySelector('ul');
+// CORRECCIÓN
 
+const secciones = ["Home", "Servicios", "Contacto", "Galeria"];
+const legal = ["Aviso Legal", "Cookies"];
+//Regla 1 para manejar el dom: CAPTURAR LOS ELEMENTOS CON LOS QUE INTERACTUO. Estos siempre deben ser globales
+const ulHeader = document.querySelector('header ul'); // la captura es recomendable que vaya en CONST, porqué así siempre será un elemento del DOM, no podrá ser sobre-escrita
+const ulFooter = document.querySelector('footer ul');
 
-secciones.forEach(function(seccion) {
-   let liElement = document.createElement('li');
-   liElement.textContent = seccion;
-   ulElement.appendChild(liElement);
-});
-
-
-    let ulElement2 = document.querySelector('footer ul');
-legal.forEach(function(item) {
-   let liElement2 = document.createElement('li');
-   liElement2.textContent = item;
-   ulElement2.appendChild(liElement2);
-});
+function printOneSection(pSeccion, pDom){
+    pDom.innerHTML += `<li><a href="">${pSeccion}</a></li>`; //modificamos el interior del objeto del DOM
+}
+function printUls(pLista, pDom){
+    pLista.forEach(seccion=> printOneSection(seccion, pDom))
+}
+printUls(secciones, ulHeader);
+printUls(legal, ulFooter);
 
     </script>
-
 </body>
-
 </html>

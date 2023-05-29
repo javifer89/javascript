@@ -11,34 +11,69 @@
 <body>
 
     <ul class="impares"></ul>
-    <ul class="par"></ul>
+    <ul class="pares"></ul>
 
 
     <script>
 
             //crear un listado de n numeros, y repartir los numeros pares en el ul de pares y los impares en el ul impares.
-
-            const numeros = [2,4,23,5,33,76,67,24,51,6,77,12,14,15]
-
-
-            let ulElement = document.querySelector('ul .par');
-            numeros.forEach(function(seccion)  {
-                if (numero % 2 === 0) {
-            let liElement = document.createElement('li');
-            liElement.textContent = seccion;
-            ulElement.appendChild(liElement);
-                }
-            })
+//EJERCICIO MIO
+            // const numeros = [2,4,23,5,33,76,67,24,51,6,77,12,14,15]
 
 
-            let ulElement2 = document.createElement('ul .impar')
-            numeros.forEach(function(seccion)  {
-                if (numero % 2 !== 0) {
-            let liElement2 = document.createElement('li');
-            liElement2.textContent = seccion;
-            ulElement2.appendChild(liElement2);
-                }console.log(liElement2)
-            })
+            // let ulElement = document.querySelector('ul.par');
+            // numeros.forEach(function(numero)  {
+            //     if (numeros % 2 === 0) {
+            // let liElement = document.createElement('li');
+            // liElement.textContent = numero;
+            // ulElement.appendChild(liElement);
+            //     }
+            //     console.log(numero);
+            // })
+
+
+
+            // let ulElement2 = document.createElement('ul.impar')
+            // numeros.forEach(function(numero)  {
+            //     if (numeros % 2 !== 0) {
+            // let liElement2 = document.createElement('li');
+            // liElement2.textContent = numero;
+            // ulElement2.appendChild(liElement2);
+            //     }console.log(numero)
+            // })
+
+// CORRECCIÓN
+const ulImpares = document.querySelector('.impares');
+const ulPares = document.querySelector('.pares');
+/**
+ * PrintOneNumber pinta un numero dentro de un listado no numerado en HTML pasado por parametro
+ */
+function printOneNumber(pNumero, pDom) {
+    pDom.innerHTML += `<li>${pNumero}</li>`// Pregunarse: texto o html (textcontent o innerHTMl), uno o varios elementos ( = o +=)
+}
+/**
+ * printNumbers recorre una lista de numeros y envia ese numero a la funcion printOneNumber
+*/
+function printNumbers (pLista, pDom) {
+    pLista.forEach(number => printOneNumber(number, pDom));
+}
+/**
+ * createListNumber recibe como parametro un numero y crea un array de tantos numeros aleatorios como le pidamos
+ */
+function createListNumber(pNum){
+const listaNumeros = [];
+    for(let i= 0; i <= pNum; i++){
+    let num = Math.ceil(Math.random() * 100);
+    listaNumeros.push(num)
+    }
+    return listaNumeros;
+}
+const arrayNums = createListNumber(20);
+
+const arrPares = arrayNums.filter(num => num % 2 === 0);
+const arrImpares = arrayNums.filter(num => num % 2 !== 0);
+printNumbers(arrPares, ulPares);
+printNumbers(arrImpares, ulImpares);
 
     </script>
 </body>
