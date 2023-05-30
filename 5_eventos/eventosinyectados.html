@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos inyectados</title>
+    <style>
+        .caja{
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            border: 1px solid black;
+        }
+        .boton{
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li onclick="CamiarColor('red', boton, '100')">red</li>
+    <li onclick="CamiarColor('blue', caja,'150')">blue</li>
+    <li onclick="CamiarColor('green', boton,'250')">green</li>
+</ul>
+<div class="caja"></div>
+<div class="boton"></div>
+    <script>
+const caja = document.querySelector('.caja');
+const boton = document.querySelector('.boton');
+function CamiarColor(pColor,pDom,pMargin){
+    caja.style.backgroundColor = pColor;
+    caja.style.marginLeft= pMargin + 'px';
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventosInyectados 2</title>
+</head>
+<body>
+
+    <!-- this representa el objeto que toco -->
+<ul>
+    <li onclick="cambiarColor(this, 'tomato')">blue</li>
+    <li onclick="cambiarColor(this)">green</li>
+    <li onclick="cambiarColor(this)">red</li>
+</ul>
+
+
+<script>
+// function cargarCaja() {
+//     let div = document.createElement('div');
+//     div.id= 'caja';
+//      div.classList.add = 'caja rojo borde' // añadiria a una clase a un objeto, le puedo sustituir con .replace() o eliminar con .remove
+     //body es la única etiqueta que es única, no hay que capturarla
+//     document.body.append(div); //append puede añadir varios elementos, appendChild añade solo 1 elemento
+// }
+//  cargarCaja();
+//  function cambiarColor() {
+
+//}
+// const li = document.querySelectorAll('ul>li');
+// function cambiarColor(pColor){
+//     li[0].style.color=pColor;
+// }
+function cambiarColor(pDom, pColor){
+
+    document.body.style.backgroundColor= pColor
+    pDom.style.color= pDom.textContent // pDom es el this, por tanto una vez capturado, el textcontent identifica el contenido de texto para asociarlo a un cambio de color.
+}
+
+</script>
+</body>
+</html>
