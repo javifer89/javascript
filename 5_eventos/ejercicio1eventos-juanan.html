@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de eventos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .escenario {
+            border: 1px solid black;
+            margin: 10px auto;
+            width: 700px;
+            height: 700px;
+        }
+
+        .coche {
+            width: 150px;
+            transition: margin 0.5s;
+            transform: rotateZ(180deg);
+        }
+
+        .botonera {
+            width: 700px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="botonera">
+        <button>IZQUIERDA</button>
+        <button>ARRIBA</button>
+        <button>ABAJO</button>
+        <button>DERECHA</button>
+    </div>
+    <div class="escenario">
+        <figure class="coche">
+            <img src="https://www.deividart.com/libres/zycars-coche_camaro-2.png" alt="">
+        </figure>
+    </div>
+
+    <script>
+
+        const botones = document.querySelectorAll('.botonera button');
+        const coche = document.querySelector('.coche');
+        let avanceX = 0;
+        let avanceY = 0;
+        botones.forEach(boton => boton.addEventListener('click', mover))
+
+        function desplazarX(pPixeles, pGrado) {
+            if (avanceX === 0 && pGrado === 0) {
+                avanceX = 0;
+            } else if (avanceX === 560 && pGrado === 180) {
+                avanceX = 560
+            } else {
+                avanceX += pPixeles;
+            }
+            coche.style.marginLeft = avanceX + 'px';
+            coche.style.transform = `rotateZ(${pGrado}deg)`
+        }
+
+        function desplazarY(pPixeles, pGrado) {
+            if (avanceY === 40 && pGrado === 90) {
+                avanceY = 40;
+            } else if (avanceY === 560 && pGrado === 270) {
+                avanceY = 560
+            } else {
+                avanceY += pPixeles;
+            }
+
+            coche.style.marginTop = avanceY + 'px';
+            coche.style.transform = `rotateZ(${pGrado}deg)`
+        }
+
+        function mover(event) {
+            console.log(avanceX);
+            console.log(avanceY);
+            switch (event.target.textContent) {
+                case 'IZQUIERDA':
+                    desplazarX(-40, 0)
+                    break;
+
+                case 'DERECHA':
+                    desplazarX(40, 180)
+                    break;
+
+                case 'ARRIBA':
+                    desplazarY(-40, 90)
+                    break;
+
+                case 'ABAJO':
+                    desplazarY(40, 270)
+                    break;
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
