@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        const url = 'https://jsonplaceholder.typicode.com/users';
+        const otraUrl = 'https://jsonplaceholder.typicode.com/posts'
+
+        function cargarDatos(pUrl){ // esta función ya esta creada en javascript, llamada FETCH
+        const miPeticion = new Promise((resolve, reject) => {
+
+            const pedido = new XMLHttpRequest();
+            pedido.open('GET', pUrl);
+            pedido.send();
+            pedido.addEventListener('load', (event) => {
+                if (event.target.status === 200) {
+                    //resuelve
+                    resolve(event.target.response)
+                } else {
+                    //error
+                    reject('No he podido conectarme a la API')
+                }
+            })
+
+        })
+        return miPeticion
+    }
+
+// Opcion 1 - gestionar con then - catch
+        cargarDatos('https://peticiones.online/api/products')
+            .then((paqueteDatos) => {
+                let datos = JSON.parse(paqueteDatos);
+                console.log(datos);
+            })
+            .catch((error) => { console.log(error) })
+
+        console.log('otra cosa que tiene que hacer mi web');
+
+
+// Opcion 2 -- gestionar con async - await
+        async function init() {
+            let response = await cargarDatos(url);  // await hace el .then
+            let data = JSON.parse(response);
+            console.log(data);
+        }
+        init()
+
+// continuo cargando cosas
+
+
+    </script>
+</body>
+
+</html>

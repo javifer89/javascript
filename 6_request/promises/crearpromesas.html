@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creacion de promesas</title>
+</head>
+
+<body>
+
+    <script>
+
+        const miPromesa = new Promise((resolve, reject) => {
+            //si la promesa se resuelve de forma esperada ejecutamos resolve()
+            //si no resuelve de forma de esperada ejecutamos reject()
+            //OJO setTimeout no es parte de la promesa solo simula tiempo.
+            setTimeout(() => {
+                //aqui ocurre la logica de lo que tiene que hacer la promesa
+                let nota = Math.random() * 15;
+                if (nota >= 5 && nota <= 10) {
+                    resolve('la promesa se resuelve: Alumno aprobado: ' + nota);
+                } else if (nota >= 0 && nota < 5) {
+                    resolve('la promesa se resuelve: Alumno suspenso: ' + nota)
+                } else {
+                    reject('La promesa me da un error, el numero no es valido ' + nota);
+                }
+            }, 3000)
+        })
+
+
+        //consumicion de la promesa. EJECUCION.
+        //como podeis ver una promesa una vez construida tiene dos metodos luego cuando la consumamos tenemos que tener en cuenta esos metodos
+        // THEN() para gestionar el resolve
+        // CATCH() para gestionar el reject;
+        miPromesa
+            .then(pMsg => console.log(pMsg))
+            .catch(pErr => console.log(pErr))
+
+        console.log('Estoy cargando esto')
+
+    </script>
+
+</body>
+
+</html>

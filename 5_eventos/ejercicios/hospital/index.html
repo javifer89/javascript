@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOSPITAL</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/data.js"></script>
+</head>
+<body>
+
+<header>
+<div>   <!--selector -->
+    <label for="diagnostico">Diagnostico</label>
+    <select id="diagnostico">
+        <option value="">Selecciona un diagnostico</option>
+        <option value="gripe">Gripe</option>
+        <option value="diabetes">Diabetes</option>
+        <option value="apendicitis">Apendicitis</option>
+        <option value="depresión">Depresión</option>
+        <option value="covid">Covid-19</option>
+    </select>
+</div>
+<hr>
+<div>   <!--edad minima/maxima -->
+    <label for="edadmin">Edad Minima</label>
+    <input type="number" id="edadmin">
+    <label for="edadmax">Edad Maxima</label>
+    <input type="number" id="edadmax">
+    <button id="btn">Filtrar</button>
+    <button id="btn2">MostrarTodos</button>
+</div>
+<hr>
+<div> <!--busqueda por nombre -->
+    <label for="nombre">Busqueda por nombre</label>
+    <input type="text" id="nombre" placeholder="Introduce tu nombre">
+</div>
+</header>
+<main>
+
+<section id="pacientes">    <!--seccion con articles de pacientes -->
+
+<!-- <article>
+    <h3>Nombre completo del paciente</h3>
+    <p>Edad:</p>
+    <p>Numero Seguridad Social:</p>
+    <p>Diagnostico:</p>
+</article> -->
+
+</section>
+
+
+</main>
+
+
+
+
+
+
+
+<script src="./js/funciones.js"></script>
+<script src="./js/main.js"></script>
+</body>
+</html>

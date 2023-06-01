@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FETCH</title>
+  </head>
+  <body>
+    <ul class="users"></ul>
+    <p class="error"></p>
+    <script>
+      const ulUser = document.querySelector(".users");
+      const parrafoError = document.querySelector(".error");
+      //es una funcion nativa del lenguaje que permite realizar peticiones tanto a api como a archivos que esten en otro servidor. Esta petición es asincrona y se gerstiona como promesa. Esto me permite delegación
+
+      const endpoint = "https://jsonplaceholder.typicode.com/users";
+
+      //consumir la promesa fetch con then catch
+
+      function cargarDatos() {
+        fetch(endpoint, { method: "GET" })
+          .then((response) => {
+            response
+              .json()
+              .then((data) => {
+                console.log(data);
+              })
+              .catch((error) => {
+                console.log(error);
+              });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+
+      //consumir la promesa fetch con async await   // utilizar try-catch es un concect exception y gestiona todo tipo de errores en Javascript
+
+      async function cargarDatosAsync(pUrl) {
+        try {
+          let response = await fetch(pUrl, { method: "GET" });
+          let data = await response.json();
+          console.log(data);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      cargarDatosAsync(endpoint);
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rick y Morty</title>
+        <style>
+            #sectionPersonajes {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
+            }
+
+            #sectionPersonajes article {
+                border: 4px solid gray;
+                border-radius: 10px;
+                padding: 20px;
+            }
+
+            #sectionPersonajes article.alive {
+                border-color: green;
+            }
+
+            #sectionPersonajes article.dead {
+                border-color: red;
+            }
+            .buscador {
+                width: 93%;
+                margin: 20px auto;
+            }
+            .buscador input {
+                width: 50%;
+                padding: 10px;
+            }
+            .buscador button {
+                padding: 10px;
+            }
+        </style>
+        <script src="./js/api.js"></script>
+    </head>
+    <body>
+        <div class="buscador">
+            <input type="text" name="" id="search" placeholder="introduce un nombre">
+        <button id="btn">buscar</button>
+        </div>
+        <div class="botonera"></div>
+        <section id="sectionPersonajes">
+        </section>
+        <script src="./js/script.js"></script>
+    </body>
+
+    </html>
+<script>
+    //consultar la api de Rick and morty
+
+</script>
+</body>
+</html>
