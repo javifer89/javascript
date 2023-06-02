@@ -29,3 +29,4 @@ function printCharacters(pList, pDom) {
 
 //botones de busqueda
 //  const personaje = document.querySelector('#search').value
+

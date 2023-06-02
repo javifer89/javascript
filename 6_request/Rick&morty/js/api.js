@@ -1,7 +1,7 @@
 // const url = `https://rickandmortyapi.com/api/character?name=rick`
 
 async function getApi() {
-     const personaje = document.querySelector('#search').value
+    const personaje = document.querySelector('#search').value
     const url = `https://rickandmortyapi.com/api/character?name=${personaje}`
     try{
         let peticion = await fetch(url, {method: 'GET'})
