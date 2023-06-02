@@ -33,7 +33,6 @@ function changeMenu(event) {
 }
 
 
-
 //borrar del array - saber el id del elemento
 function deleteItemArray(pId, pList) {
   //splice borrar por posición, tenemos una ID para saber su posición
