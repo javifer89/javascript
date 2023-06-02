@@ -1,31 +1,36 @@
 //capturamos elementos del dom
-
 const sectionMeals = document.querySelector("#menu .meals");
 
-
+//vamos a capturar los botones del menu de la izq
+const lis = document.querySelectorAll(".select-lunch-time li");
+lis.forEach((li) => li.addEventListener("click", changeMenu));
 
 function printMenu(pList, pDom) {
-  (pDom.innerHTML = ""), pList.forEach((item) => printOneItem(item, pDom));
+  pDom.innerHTML = "" ;
+  pList.forEach((item) => printOneItem(item, pDom));
 }
-// printMenu(menu, sectionMeals);
-
+ printMenu(menu, sectionMeals);
 
 function filterByCategory(pList, pCategory) {
-return pList.filter(item => item.category === pCategory);
+  return pList.filter((item) => item.category === pCategory);
 }
 
-function changeMenu (event){
-let category = event.target.textContent.toLowerCase();
-const menuFiltered = filterByCategory(menu, category)
+// RETO, asignar la class ACTIVE a la seccion del menu que esté en activo
+//añadir clase al activo (event.target), pero hay que apagar el que no esta activo
+function changeMenu(event) {
+  let category = event.target.textContent.toLowerCase();
+  const menuFiltered = filterByCategory(menu, category);
+  printMenu(menuFiltered, sectionMeals);
+  console.log(event.target.classList)
+  lis.forEach((li, i) =>{
+    if(li.classList.contains('active')){
+      li.classList.remove('active');
+    }
+    if(li.innerHTML === event.target.innerHTML){
+      li.classList.add('active');
+    }
+  })
 }
-
-//vamos a capturar los botones del menu de la izq
-const lis = document.querySelectorAll('.select-lunch-time li')
-lis = lis.forEach( li  => li.addEventListener('click', changeMenu))
-
-printMenu(menuFiltered,sectionMeals);
-
-
 
 
 
@@ -76,12 +81,7 @@ function printOneItem(pMenuItem, pDom) {
   a.classList.add("boton");
   a.textContent = "Borrar";
 
-  div.appendChild(header, p, a);
+  div.append(header, p, a);
   article.append(figure, div);
   pDom.appendChild(article);
 }
-
-
-
-// RETO, asignar la class ACTIVE a la seccion del menu que esté en activo
-//añadir clase al activo (event.target), pero hay que apagar el que no esta activo
